@@ -10,3 +10,33 @@ the galaxy abundances, their clustering and the galaxy-galaxy lensing signal, gi
 
 In combination with the measurements of the clustering, abundance and lensing
 of galaxies, these routines can be used to perform parameter inferences.
+
+In order to install the code, please install 
+a) C++ compiler, 
+b) swig, (http://www.swig.org)
+c) GNU Scientific Library (http://www.gnu.org/software/gsl/)
+
+Make sure to put the path to swig, g++, in your PATH environment variable, the
+path to the gsl include files in your INCLUDE environment variable and the part
+to the gsl library in your LD_LIBRARY_PATH variable.
+
+Then for a quick compilation:
+./configure --prefix=`pwd`/test
+make 
+make install
+
+If all goes well, you should have a working python library in the subdirectory
+test/lib/python2.7/...
+
+To test the installation, run:
+
+import sys
+sys.path.append('PATH_TO_COSMOLOGY.PY')
+import cosmology as cc
+
+# This is the default constructor with some basic cosmological parameters
+a=cc.cosmology()
+# Prints out the comoving distance in the fiducial cosmology
+print a.Chiofz(2.0)
+
+
