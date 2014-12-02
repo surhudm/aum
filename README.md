@@ -21,9 +21,11 @@ path to the gsl include files in your INCLUDE environment variable and the part
 to the gsl library in your LD_LIBRARY_PATH variable.
 
 Then for a quick compilation:
+```bash
 ./configure --prefix=`pwd`/test
 make 
 make install
+```
 
 If all goes well, you should have a working python library in the subdirectory
 test/lib/python2.7/...
