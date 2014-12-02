@@ -1,0 +1,26 @@
+NEWS: (LATEST at the top)
+=========================
+
+08/09/2011
+==========
+
+1) Halo exclusion implemented
+
+31/08/2010
+==========
+
+Starting development for version 1.1. 
+
+Features to be added in release 1.1:
+1) Dark energy equation of state parameters
+2) Departure from non-flat cosmologies
+3) Cosmology dependence of c-M relation
+4) Cored profile for the Nsat(M) relation
+5) Parameter to introduce super or sub-Poisson behaviour for Nsat(M) relation
+6) Support for newer Zehavi et al. dataset
+
+
+31/08/2010
+==========
+
+This is version 1.0 of the code aum designed to analyse the clustering and lensing data from SDSS.

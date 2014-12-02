@@ -1,0 +1,125 @@
+TODO LIST:
+==========
+Features to be added in release 1.1:
+
+TESTING/DEBUGGING PHASE:
+{
+    * Dark energy equation of state parameters: 
+    31082010 DONE. TESTING REQUIRED.
+
+    * Redshift space corrections.
+    07092011 DONE
+    Only differences in the way the redshift space correction is
+    calculated.
+
+    * Problems with Qk calculation. Spline points may not be enough
+    to capture the details. The cpp code currently reproduces the
+    fortran code!
+
+    * Check for memory leaks
+
+    * Test the cosmic emulator power spectrum with the Smith et al.
+    Check their paper too. According to Heitmann et al. 2010, it can
+    cause problems in getting unbiased estimates. So need to change
+    it.
+
+    * Three things to be checked:
+    a. Convergence issues for Q(k)
+      -- An idea to deal with this is under investigation now!
+      Integrate out to k*rzetamax first and then the fourier integral
+      out to infty. This removes the convergence problem but is 3
+      times slower. The final results are same nevertheless, so we go
+      for speed.
+    b. Spline number of points for Q(k,rmin)
+      -- This is unclear
+    c. Redshift space corrections
+      -- Test with mock catalogs
+    d. Q(k) for large scales
+      -- This is unclear, the reason for the non-convergent integral
+      is because we pass an increasing function to qawf!?
+
+}
+
+TESTED against the Fortran version of the code
+{
+
+    * Support for halo exclusion, radial dependence of the bias.
+    04092011
+
+    * setrzeta() DONE
+    04092011
+
+    * Change Rvir to R200. DONE
+    04092011
+
+    * The spline for xi_L is only the redshift zero one, remove all other
+    apparatus
+
+    * Addition of dnlDdln1pz routine to cosmology
+    07092011 DONE: Perhaps Frank's code needs to reduce the interval
+    for the derivative. It is 0.01 now, but 0.0001 seems better.
+
+    * Avoid calls to get totNc and totNs, as these are entirely unnecessary
+    07092011 DONE
+
+    *xigg and xigd looks ok at various redshifts! May be some sign
+    issues on large scales, however its mostly very close to zero
+    there.
+
+    * Separate the Wp and ESD calculation in to separate parts, to avoid
+    unnecessary computations.
+    07092011 DONE
+
+    * Interface to get the wp and ESD correct - do it with wrapper
+    functions
+    07092011 DONE
+
+}
+
+NEXT TODO (In order of priority):
+
+* Data in binary format for ease of reproducibility
+
+Interface with CAMB, neutrino masses and so on!!!
+* Support for newer Zehavi et al. dataset : Check out the Zehavi et al.
+support branch
+
+* Massive neutrinoes, support for reading Pk lin output by CAMB:
+Checkout the massive neutrino branch. Neutrino branch requires halo
+exclusion addition
+
+* Departure from non-flat cosmologies : 
+Delta_crit(z) needs to be changed
+
+* Cosmology dependence of c-M relation : 
+Currently only through F and
+K parameters.
+
+* Cored profile for the Nsat(M) relation : 
+Equations ready
+
+* Parameter to introduce super or sub-Poisson behaviour for Nsat(M) relation
+
+* OpenMP parallelisation
+
+Identifying the changes to be made for version 1.1
+
+DONE:
+=====
+src/cosmology.cpp : Main changes will go here. Constructors will be changed and non-flat cosmologies should be allowed.
+src/powerspectrum.cpp: Smith power spectrum not defined for w0 != -1 cosmologies, or non-flat cosmologies.
+src/hod.cpp: Changepar routine requires more parameters now, getnewpar, print routines changed, getOmk added.
+src/mcmc.cpp: New parameters added, parameter sequencing changed to better reflect degeneracies, Additional prior added on the curvature data.
+src/dat/sampleconfig: Changed parameter orders to reflect changes in the code.
+
+Add possibility to analyse for flat cosmologies.
+
+No changes here
+=================
+src/main.cpp
+src/data.cpp
+src/gauleg.cpp
+src/grid.cpp
+src/haloes.cpp
+src/fisher.cpp
+

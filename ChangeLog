@@ -1,0 +1,27 @@
+08-09-2011: Addition of halo exclusion
+===========
+
+
+31-08-2010: Dark energy model parameters added for version 1.1
+===========
+
+CHANGES DONE:
+=============
+src/cosmology.cpp : Main changes will go here. Constructors will be changed and non-flat cosmologies should be allowed.
+src/powerspectrum.cpp: Smith power spectrum not defined for w0 != -1 cosmologies, or non-flat cosmologies.
+src/hod.cpp: Changepar routine requires more parameters now, getnewpar, print routines changed, getOmk added.
+src/mcmc.cpp: New parameters added, parameter sequencing changed to better reflect degeneracies, Additional prior added on the curvature data.
+src/dat/sampleconfig: Changed parameter orders to reflect changes in the code.
+
+No changes here
+=================
+src/main.cpp
+src/data.cpp
+src/gauleg.cpp
+src/grid.cpp
+src/haloes.cpp
+src/fisher.cpp
+
+31-08-2010
+===========
+This is version 1.0 of the aum release!
