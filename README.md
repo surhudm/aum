@@ -30,6 +30,7 @@ test/lib/python2.7/...
 
 To test the installation, run:
 
+```python
 import sys
 sys.path.append('PATH_TO_COSMOLOGY.PY')
 import cosmology as cc
@@ -41,5 +42,5 @@ print a.Chiofz(2.0)
 
 # Prints the abundance of 1e9 Msun halos at z=0.0
 print a.nofm(1e9,0.0)
-
+```
 
