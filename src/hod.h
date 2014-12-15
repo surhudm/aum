@@ -164,11 +164,6 @@ class hod : public cosmology
     gsl_interp_accel *xigg_barbar_acc;
     gsl_spline *xigg_barbar_spline;
 
-    void changepar(cosmo &, hodpars &, int,double, double &);
-    void changepar(cosmo &, hodpars &, int,double);
-    void getnewpar(cosmo &, hodpars &, cosmo, hodpars, gsl_rng *& );
-    void getnewpar(cosmo &, hodpars &, gsl_rng *&, double * , int *, int);
-
     /// Power spectra
     double Pk_gg_gd(double);
     double Pk_gg_gd_he(double);
