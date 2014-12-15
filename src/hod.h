@@ -150,6 +150,7 @@ class hod : public cosmology
     double xigg_bar(double r,double z);
     void init_xigg_bar(double z);
     double xigg_bar_num(double r,double z);
+
     /// Numerical interpolation units
 #ifndef SWIG
     const static int Nxibar=200;
@@ -162,31 +163,7 @@ class hod : public cosmology
     bool bool_init_xigg_barbar;
     gsl_interp_accel *xigg_barbar_acc;
     gsl_spline *xigg_barbar_spline;
-    
-    public:
-    int whichopt;
-    hodpars hodp;
-    hod(cosmo, hodpars);
-    hod();
 
-    double ncen(double);           // <Ncen>(M)
-    double nsat(double);           // <Nsat>(M)
-    double ncenz(double);           // <Ncen>(z)
-    double nsatz(double);           // <Nsat>(z)
-    double avmass_tot(double);
-    double avmass_cen(double);
-    double galaxy_bias(double);
-#ifndef SWIG
-	const static int Np_nsat=100;
-#else
-	const int Np_nsat=100;
-#endif
-	double xp[Np_nsat],wp[Np_nsat];
-    double gets8();
-    double geth();
-    double getOmb();
-    double getOmk();
-    double set_cfactor(double);
     void changepar(cosmo &, hodpars &, int,double, double &);
     void changepar(cosmo &, hodpars &, int,double);
     void getnewpar(cosmo &, hodpars &, cosmo, hodpars, gsl_rng *& );
@@ -196,14 +173,49 @@ class hod : public cosmology
     double Pk_gg_gd(double);
     double Pk_gg_gd_he(double);
 
-    /// Power spectra interpolation
-    double D2gg_num(double,double);
-    double D2gd_num(double,double);
-
+#ifndef SWIG
+	const static int Np_nsat=100;
+#else
+	const int Np_nsat=100;
+#endif
+    double xp[Np_nsat],wp[Np_nsat];
+    
     /// Correlation functions
     double xi_gg_gd(double);
     double xi_gg(double);
     double xi_gd(double);
+
+    hodpars hodp;
+
+    public:
+    hod(cosmo, hodpars);
+    hod();
+
+    // Halo occupation as a function of mass 
+    double ncen(double);           // <Ncen>(M)
+    double nsat(double);           // <Nsat>(M)
+
+
+    // Galaxy abundance as a function of redshift
+    double ncenz(double);           // <Ncen>(z)
+    double nsatz(double);           // <Nsat>(z)
+
+    // Average total halo mass, average central halo mass, and average galaxy
+    // bias
+    double avmass_tot(double);
+    double avmass_cen(double);
+    double galaxy_bias(double);
+
+    // Access to cosmological variables
+    double gets8();
+    double geth();
+    double getOmb();
+    double getOmk();
+    double set_cfactor(double);
+
+    /// Power spectra interpolation
+    double D2gg_num(double,double);
+    double D2gd_num(double,double);
 
     /// Numerical interpolation of correlation functions
     double xigg_num(double,double);
@@ -221,17 +233,25 @@ class hod : public cosmology
     
     double scale_dep_bias_crossr(double,int,double[],double[],double[],bool);
 
+    // Reset the redshift for the calculations
     void resetz(double);
 
+    // Free memory
     void hod_free();
 
+    // Various outputs
     void print(cosmo, hodpars);
     void print(FILE*&,cosmo, hodpars, double,double);
     void print(FILE*&,cosmo, hodpars);
     void print();
 
+    // Set halo exclusion option
     void sethalo_exc(bool);
+
+    // Set central offset parameters, default zero off-centering
     void set_cen_offset_params(double,double);
+
+    // Set incompleteness parameters, default none
     void set_inc_params(double,double);
 
     /// Friends
@@ -244,13 +264,16 @@ class hod : public cosmology
     friend double dxiggbarbar(double x, void* params);
     friend double dxiggbar(double x, void* params);
 
-    // Renew parameters
+    // Renew HOD and cosmology parameters
     void hod_renew(cosmo p, hodpars h);
 
 #if TINK==2
     void init_Nc_spl(double xx[],double yy[],int Ncspl);
     void init_Ns_spl(double xx[],double yy[],int Nsspl);
 #endif
+
+    // This option sets up output split by different one halo-two halo contributions, use with caution
+    int whichopt;
 
 };
 
