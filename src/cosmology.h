@@ -254,6 +254,7 @@ class cosmology
     /// Private functions
     void initialize();          //Initializations
     double Chiofz(double);    //Comoving distance h^{-1} Mpc for flat cosmology, Chi for non-flat cosmology
+    double Chiofz_num(double);    //Comoving distance h^{-1} Mpc for flat cosmology, Chi for non-flat cosmology
     double growthfactor(double);  //Growth factor dummy
 
     void init_growthfactor();   // Speed up for growth factor calculations
@@ -364,7 +365,14 @@ class cosmology
     double *Qk1;
     double *Qk2;
     bool bool_initQk;
+
+    double ukofm(double,double,double); // Fourier transform of NFW profile
+    double uskofm(double,double,double,double); // Fourier transform of NFW profile for satellites
+    double ukinterp(double,double); // Interpolation routine to find ukofm quickly
     
+    double getzeta_rmax();
+    double getzetamax();
+
     //Friends
     friend double dTime(double,void*);
     friend double dChi (double,void*);
@@ -410,7 +418,7 @@ class cosmology
 	void cosmo_free();
 
         // Different distances
-        double Chiofz_num(double);    //Comoving distance h^{-1} Mpc for flat cosmology, Chi for non-flat cosmology
+        double Dcofz(double);    //Comoving distance h^{-1} Mpc
         double Dlofz(double);     //Luminosity distance h^{-1} Mpc
         double Daofz(double);     //Angular diameter distance h^{-1} Mpc
         double Daofzlh(double,double);     //Angular diameter distance h^{-1} Mpc
@@ -457,12 +465,9 @@ class cosmology
         //NFW profile related functions
         void modelNFWhalo(double,double,double&,double&,double&,double&,double&); // Radii in physical units
         void modelNFWhalo_com(double,double,double&,double&,double&,double&,double&); // Mvir, Rvir, cvir, R200, c200
-        void modelNFWhalo_com(double,double,double&,double&,double&); //Mvir, Rvir, cvir
+        //void modelNFWhalo_com(double,double,double&,double&,double&); //Mvir, Rvir, cvir
 
         double conc(double,double); //Concentration parameter wrapper
-        double ukofm(double,double,double); // Fourier transform of NFW profile
-        double uskofm(double,double,double,double); // Fourier transform of NFW profile for satellites
-	double ukinterp(double,double); // Interpolation routine to find ukofm quickly
 
         double Eofz(double);        //Eofz(z) 
 
@@ -474,8 +479,6 @@ class cosmology
 	double getOmb();
 	double geth();
 	double getns();
-    double getzeta_rmax();
-    double getzetamax();
     double getxinlzetamax();
     double get_cfac();
     double set_cfac(double);

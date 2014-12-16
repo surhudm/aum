@@ -614,6 +614,7 @@ double cosmology::getmstar()
 
 }
 
+/*
 /// Radii are in comoving units here
 void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir, double &cvir)
 {
@@ -628,6 +629,7 @@ void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir
     Rvir=Rvir*(1.+z);
 
 }
+*/
 
 /// Radii are in comoving units here
 void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir, double &cvir, double &R200, double &c200)

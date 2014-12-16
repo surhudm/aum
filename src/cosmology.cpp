@@ -338,6 +338,11 @@ double cosmology::Chiofz_num(double z){
     return result;
 }
 
+// Comoving distance in units of h^{-1} Mpc
+double cosmology::Dcofz(double z){
+    return (1+z)*Daofz(z);
+}
+
 /// Dl(z) : Luminosity distance in units of h^{-1} Mpc
 double cosmology::Dlofz(double z)
 {
