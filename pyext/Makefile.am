@@ -1,7 +1,8 @@
+AUTOMAKE_OPTIONS = subdir-objects
 BUILT_SOURCES = $(srcdir)/cosmology_wrap.cpp  $(srcdir)/hod_wrap.cpp
 
-COS_SOURCES = cosmology.swig 
-HOD_SOURCES = hod.swig 
+COS_SOURCES = cosmology.i 
+HOD_SOURCES = hod.i 
 
 pkgpython_PYTHON = cosmology.py hod.py
 pkgpyexec_LTLIBRARIES = _cosmology.la _hod.la
