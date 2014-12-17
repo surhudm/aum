@@ -1,8 +1,10 @@
 %module hod
-%feature("autodoc", 1);
+%include cpointer.i
 %pointer_class(double,dp)
 %apply double& INOUT { double& a };
+%feature("autodoc", 1);
 %include "carrays.i"
+%include "cosmology.i"
 %array_functions(double, dArray);
 %array_class(double, doubleArray);
 %{
@@ -48,6 +50,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
     >>> import hod as h
     >>> a = h.cosmo()
     >>> h = h.hodpars()
+    >>> a.Om0=0.3
     >>> help(a)
 
 "

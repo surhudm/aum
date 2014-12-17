@@ -22,13 +22,11 @@ to the gsl library in your LD_LIBRARY_PATH variable.
 
 Then for a quick compilation:
 ```bash
-./configure --prefix=`pwd`/test
-make 
-make install
+python setup.py install --prefix=`pwd`/install
 ```
 
 If all goes well, you should have a working python library in the subdirectory
-test/lib/python2.7/...
+install/lib/python2.7/...
 
 To test the installation, run:
 
