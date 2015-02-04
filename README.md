@@ -20,15 +20,16 @@ Make sure to put the path to swig, g++, in your PATH environment variable, the
 path to the gsl include files in your INCLUDE environment variable and the part
 to the gsl library in your LD_LIBRARY_PATH variable.
 
-Then for a quick compilation:
+Then for a quick compilation of the python modules:
 ```bash
-./configure --prefix=`pwd`/test
-make 
-make install
+python setup.py install --prefix=`pwd`/install
+python setup.py install --prefix=`pwd`/install
 ```
+Yes you have to run the same command twice, so that the swig generated python
+modules are also copied correctly.
 
 If all goes well, you should have a working python library in the subdirectory
-test/lib/python2.7/...
+install/lib/python2.7/...
 
 To test the installation, run:
 
