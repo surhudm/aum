@@ -20,7 +20,7 @@ Make sure to put the path to swig, g++, in your PATH environment variable, the
 path to the gsl include files in your INCLUDE environment variable and the part
 to the gsl library in your LD_LIBRARY_PATH variable.
 
-Then for a quick compilation:
+Then for a quick compilation of the python modules:
 ```bash
 python setup.py install --prefix=`pwd`/install
 python setup.py install --prefix=`pwd`/install
