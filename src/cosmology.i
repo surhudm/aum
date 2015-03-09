@@ -710,7 +710,7 @@ Concentration of halos
 
 
 %feature("docstring") cosmology::Time
-" Get the time in units of 1/(100 km/s/Mpc/yr)
+" Get the time in units of 1/(H_0 km/s/Mpc/yr)
 
 :Parameters:
 
