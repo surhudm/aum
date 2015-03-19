@@ -718,7 +718,7 @@ Concentration of halos
 
 :Returns:
 
--   Time : in units of 1/(100 km/s/Mpc/yr)
+-   Time : in units of 1/(H_0 km/s/Mpc/yr)
 
 :Examples:
 
@@ -729,7 +729,7 @@ Concentration of halos
 
 
 %feature("docstring") cosmology::Lookback
-" Get the lookback time in units of 1/(100 km/s/Mpc/yr)
+" Get the lookback time in units of 1/(H_0 km/s/Mpc/yr)
 
 :Parameters:
 
@@ -737,7 +737,7 @@ Concentration of halos
 
 :Returns:
 
--   Lookback Time : in units of 1/(100 km/s/Mpc/yr)
+-   Lookback Time : in units of 1/(H_0 km/s/Mpc/yr)
 
 :Examples:
 
