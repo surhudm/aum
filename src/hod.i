@@ -294,7 +294,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 >>> a.set_cfactor(1.0)
 "
 
-%feature("docstring") cosmology::D2gg_num
+%feature("docstring") hod::D2gg_num
 "Power per logarithmic k interval in the galaxy galaxy power spectrum Delta^2(k,z)
 
 :Parameters:
@@ -312,7 +312,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 "
 
-%feature("docstring") cosmology::D2gd_num
+%feature("docstring") hod::D2gd_num
 "Power per logarithmic k interval in the galaxy matter power spectrum Delta^2(k,z)
 
 :Parameters:
@@ -330,7 +330,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 "
 
-%feature("docstring") cosmology::xigg_num
+%feature("docstring") hod::xigg_num
 "Galaxy-galaxy correlation function at distance radius and redshift z
 
 :Parameters:
@@ -348,7 +348,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 "
 
-%feature("docstring") cosmology::xigd_num
+%feature("docstring") hod::xigd_num
 "Galaxy-matter correlation function at distance radius and redshift z
 
 :Parameters:
@@ -366,6 +366,200 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 "
 
+%feature("docstring") hod::Wp_ESD
+"Return projected galaxy correlation and ESD 
 
+:Parameters:
+
+-   z: Redshift
+-   wpbins: Number of radial bins for the projected correlation function (wp)
+-   esdbins: Number of radial bins for the excess surface density (ESD)
+-   rp: A c-array of projected radii for wp
+-   esdrp: A c-array of projected radii for ESD
+-   wp: A c-array to store results for wp
+-   esd: A c-array to store results for ESD
+-   esdbins2: Number of radial bins for the surface density calculation
+    (>esdbins+4 typically)
+-   pimax: The line of sight integration length
+-   reset: (optional) reset halo exclusion related calculations, default=1
+
+:Returns:
+
+-   status: 0 on success, wp results are stored in wp array, and esd in ESD
+    array
+
+:Examples:
+
+>>> a.Wp_ESD(0.1, 12, 12, rp, esdrp, wp, esd, 16, 100.0)
+
+"
+
+%feature("docstring") hod::Wp
+"Return projected galaxy correlation
+
+:Parameters:
+
+-   z: Redshift
+-   wpbins: Number of radial bins for the projected correlation function (wp)
+-   rp: A c-array of projected radii for wp
+-   wp: A c-array to store results for wp
+-   pimax: The line of sight integration length
+-   reset: (optional) reset halo exclusion related calculations, default=1
+
+:Returns:
+
+-   status: 0 on success, wp results are stored in wp array
+
+:Examples:
+
+>>> a.Wp(0.1, 12, rp, wp, 100.0)
+
+"
+
+
+%feature("docstring") hod::Wp_Kaiser
+"Return projected galaxy correlation accounting for the effects of redshift
+space distortions
+
+:Parameters:
+
+-   z: Redshift
+-   wpbins: Number of radial bins for the projected correlation function (wp)
+-   rp: A c-array of projected radii for wp
+-   wp: A c-array to store results for wp
+-   pimax: The line of sight integration length
+-   reset: (optional) reset halo exclusion related calculations, default=1
+
+:Returns:
+
+-   status: 0 on success, wp results are stored in wp array
+
+:Examples:
+
+>>> a.Wp_Kaiser(0.1, 12, rp, wp, 100.0)
+
+"
+
+%feature("docstring") hod::ESD
+"Return the weak lensing signal
+
+:Parameters:
+
+-   z: Redshift
+-   esdbins: Number of radial bins for the excess surface density (ESD)
+-   esdrp: A c-array of projected radii for ESD
+-   esd: A c-array to store results for ESD
+-   esdbins2: Number of radial bins for the surface density calculation
+    (>esdbins+4 typically)
+-   reset: (optional) reset halo exclusion related calculations, default=1
+
+:Returns:
+
+-   status: 0 on success, wp results are stored in wp array, and esd in ESD
+    array
+
+:Examples:
+
+>>> a.ESD(0.1, 12, esdrp, esd, 16)
+
+"
+
+
+%feature("docstring") hod::scale_dep_bias_crossr
+"Return the scale dependent bias and the cross-correlation coefficient
+
+:Parameters:
+
+-   z: Redshift
+-   rbins: Number of radial bins 
+-   rp: A c-array of 3-d radii
+-   bias: A c-array to store results for scale dependent bias
+-   crossr: A c-array to store results for cross-correlation coefficient
+-   reset: (optional) reset halo exclusion related calculations, default=1
+
+:Returns:
+
+-   status: 0 on success, bias and cross-correlation results stored in array
+
+:Examples:
+
+>>> a.scale_dep_bias_crossr(0.1, 12, rr, bias, crossr)
+
+"
+
+
+%feature("docstring") hod::resetz
+"Reset a number of splines initialized to perform gg, and gd power spectrum
+calculations
+
+:Parameters:
+
+-   z: Redshift
+
+:Returns:
+
+-   None: No return value
+
+:Examples:
+
+>>> a.resetz(0.3)
+
+"
+
+
+%feature("docstring") hod::sethalo_exc
+"Set halo exclusion module
+
+:Parameters:
+
+-   haloexc: Enable halo exclusion or not
+
+:Returns:
+
+-   None: No return value
+
+:Examples:
+
+>>> a.sethalo_exc(True)
+
+"
+
+
+%feature("docstring") hod::set_cen_offset_params
+"Set off centering parameters
+
+:Parameters:
+
+-   fcen_off: Fraction of off-centered halos
+-   off_rbyrs: offcentering kernel in units of scale radius of all halos
+
+:Returns:
+
+-   None: No return value
+
+:Examples:
+
+>>> a.set_cen_offset_params(0.4, 1.0)
+
+"
+
+
+%feature("docstring") hod::set_inc_params
+"Set incompleteness parameters
+
+:Parameters:
+
+-   inc_alp: Slope for the incompleteness
+-   inc_xM: Logarithm of mass above which sample is complete, below a log-linear form with slope inc_alp
+
+:Returns:
+
+-   None: No return value
+
+:Examples:
+
+>>> a.set_inc_params(1.0, 12.0)
+
+"
 %include "cosmology.h"
 %include "hod.h"

@@ -244,10 +244,10 @@ class hod : public cosmology
     void sethalo_exc(bool);
 
     // Set central offset parameters, default zero off-centering
-    void set_cen_offset_params(double,double);
+    void set_cen_offset_params(double fcen_off,double off_rbyrs);
 
     // Set incompleteness parameters, default none
-    void set_inc_params(double,double);
+    void set_inc_params(double inc_alp,double inc_xM);
 
     /// Friends
     friend double dxi_gg(double,void*);
