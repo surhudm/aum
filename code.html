@@ -2261,6 +2261,47 @@ with the bias prescription</li>
 <dt id="hod.hod.ESD">
 <code class="descname">ESD</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int esdbins</em>, <em>double [] rp</em>, <em>double [] esd</em>, <em>int esdbins2</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ESD" title="Permalink to this definition">¶</a></dt>
 <dd><p>ESD(hod self, double z, int esdbins, double [] rp, double [] esd, int esdbins2) -&gt; double</p>
+<p>Return the weak lensing signal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+<li>esdbins: Number of radial bins for the excess surface density (ESD)</li>
+<li>esdrp: A c-array of projected radii for ESD</li>
+<li>esd: A c-array to store results for ESD</li>
+<li>esdbins2: Number of radial bins for the surface density calculation
+(&gt;esdbins+4 typically)</li>
+<li>reset: (optional) reset halo exclusion related calculations, default=1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>status: 0 on success, wp results are stored in wp array, and esd in ESD
+array</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ESD</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">esdrp</span><span class="p">,</span> <span class="n">esd</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2281,6 +2322,45 @@ Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; doub
 <dt id="hod.hod.Wp">
 <code class="descname">Wp</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int wpbins</em>, <em>double [] rp</em>, <em>double [] wp</em>, <em>double pimax</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wp(hod self, double z, int wpbins, double [] rp, double [] wp, double pimax) -&gt; double</p>
+<p>Return projected galaxy correlation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+<li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
+<li>rp: A c-array of projected radii for wp</li>
+<li>wp: A c-array to store results for wp</li>
+<li>pimax: The line of sight integration length</li>
+<li>reset: (optional) reset halo exclusion related calculations, default=1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>status: 0 on success, wp results are stored in wp array</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Wp</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">wp</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2292,12 +2372,97 @@ Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; doub
 <dt>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, </dt>
 <dd>int esdbins2, double pimax) -&gt; double</dd>
 </dl>
+<p>Return projected galaxy correlation and ESD</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+<li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
+<li>esdbins: Number of radial bins for the excess surface density (ESD)</li>
+<li>rp: A c-array of projected radii for wp</li>
+<li>esdrp: A c-array of projected radii for ESD</li>
+<li>wp: A c-array to store results for wp</li>
+<li>esd: A c-array to store results for ESD</li>
+<li>esdbins2: Number of radial bins for the surface density calculation
+(&gt;esdbins+4 typically)</li>
+<li>pimax: The line of sight integration length</li>
+<li>reset: (optional) reset halo exclusion related calculations, default=1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>status: 0 on success, wp results are stored in wp array, and esd in ESD
+array</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Wp_ESD</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">esdrp</span><span class="p">,</span> <span class="n">wp</span><span class="p">,</span> <span class="n">esd</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.Wp_Kaiser">
 <code class="descname">Wp_Kaiser</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int wpbins</em>, <em>double [] rp</em>, <em>double [] wp</em>, <em>double pimax</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp_Kaiser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wp_Kaiser(hod self, double z, int wpbins, double [] rp, double [] wp, double pimax) -&gt; double</p>
+<p>Return projected galaxy correlation accounting for the effects of redshift
+space distortions</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+<li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
+<li>rp: A c-array of projected radii for wp</li>
+<li>wp: A c-array to store results for wp</li>
+<li>pimax: The line of sight integration length</li>
+<li>reset: (optional) reset halo exclusion related calculations, default=1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>status: 0 on success, wp results are stored in wp array</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Wp_Kaiser</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">wp</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2857,17 +3022,126 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 <dl class="method">
 <dt id="hod.hod.resetz">
 <code class="descname">resetz</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.resetz" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Reset a number of splines initialized to perform gg, and gd power spectrum
+calculations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None: No return value</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">resetz</span><span class="p">(</span><span class="mf">0.3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.scale_dep_bias_crossr">
 <code class="descname">scale_dep_bias_crossr</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>int arg3</em>, <em>double [] arg4</em>, <em>double [] arg5</em>, <em>double [] arg6</em>, <em>bool arg7</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.scale_dep_bias_crossr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Return the scale dependent bias and the cross-correlation coefficient</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+<li>rbins: Number of radial bins</li>
+<li>rp: A c-array of 3-d radii</li>
+<li>bias: A c-array to store results for scale dependent bias</li>
+<li>crossr: A c-array to store results for cross-correlation coefficient</li>
+<li>reset: (optional) reset halo exclusion related calculations, default=1</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>status: 0 on success, bias and cross-correlation results stored in array</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">scale_dep_bias_crossr</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">rr</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">crossr</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.set_cen_offset_params">
-<code class="descname">set_cen_offset_params</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.set_cen_offset_params" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">set_cen_offset_params</code><span class="sig-paren">(</span><em>hod self</em>, <em>double fcen_off</em>, <em>double off_rbyrs</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.set_cen_offset_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set off centering parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>fcen_off: Fraction of off-centered halos</li>
+<li>off_rbyrs: offcentering kernel in units of scale radius of all halos</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None: No return value</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">set_cen_offset_params</span><span class="p">(</span><span class="mf">0.4</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.set_cfactor">
@@ -2910,13 +3184,82 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 
 <dl class="method">
 <dt id="hod.hod.set_inc_params">
-<code class="descname">set_inc_params</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.set_inc_params" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">set_inc_params</code><span class="sig-paren">(</span><em>hod self</em>, <em>double inc_alp</em>, <em>double inc_xM</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.set_inc_params" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set incompleteness parameters</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>inc_alp: Slope for the incompleteness</li>
+<li>inc_xM: Logarithm of mass above which sample is complete, below a log-linear form with slope inc_alp</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None: No return value</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">set_inc_params</span><span class="p">(</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.sethalo_exc">
 <code class="descname">sethalo_exc</code><span class="sig-paren">(</span><em>hod self</em>, <em>bool arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.sethalo_exc" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Set halo exclusion module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>haloexc: Enable halo exclusion or not</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None: No return value</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">sethalo_exc</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="attribute">
 <dt id="hod.hod.whichopt">
