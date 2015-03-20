@@ -9,7 +9,7 @@
 %}
 
 %feature("docstring") cosmology::cosmology
-"Initializes cosmology object
+"Initializes cosmology object 
 
 :Parameters:
 
@@ -29,13 +29,13 @@
 
 -   Cosmology object
 
-Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=log10(8.0).
+    Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=log10(8.0).
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> help(a)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> help(a)
 
 "
 
@@ -44,15 +44,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.cosmo_free()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.cosmo_free()
 
 "
 
 
 %feature("docstring") cosmology::Dcofz
-" Comoving distance as a function of redshift
+"Comoving distance as a function of redshift
 
 :Parameters:
 
@@ -64,14 +64,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Dcofz(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Dcofz(0.5)
 
 "
 
 %feature("docstring") cosmology::get_sinsqang
-" Calculate the square of the sin of the angle between two galaxies
+"Calculate the square of the sin of the angle between two galaxies
 
 :Parameters:
 
@@ -88,13 +88,13 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.get_sinsqang(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.get_sinsqang(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
 
 "
 %feature("docstring") cosmology::get_logrp
-" Calculate the projected separation between two galaxies
+"Calculate the projected separation between two galaxies
 
 :Parameters:
 
@@ -111,15 +111,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.get_logrp(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.get_logrp(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
 
 "
 
 
 %feature("docstring") cosmology::get_deltapi
-" Calculate the line of sight separation between two galaxies
+"Calculate the line of sight separation between two galaxies
 
 :Parameters:
 
@@ -132,14 +132,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.get_deltapi(0.0, 0.2)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.get_deltapi(0.0, 0.2)
 
 "
 
 %feature("docstring") cosmology::Dlofz
-" Luminosity distance as a function of redshift
+"Luminosity distance as a function of redshift
 
 :Parameters:
 
@@ -151,15 +151,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Dlofz(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Dlofz(0.5)
 
 "
 
 
 %feature("docstring") cosmology::Daofz
-" Angular diameter distance as a function of redshift
+"Angular diameter distance as a function of redshift
 
 :Parameters:
 
@@ -171,14 +171,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Daofz(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Daofz(0.5)
 
 "
 
 %feature("docstring") cosmology::Daofzlh
-" Angular diameter distance as a function of redshift of lens and source
+"Angular diameter distance as a function of redshift of lens and source
 
 :Parameters:
 
@@ -191,14 +191,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Daofzlh(0.5,1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Daofzlh(0.5,1.0)
 
 "
 
 %feature("docstring") cosmology::growthfactor_num
-" Growth factor as a function of redshift (normalized to unity at redshift zero)
+"Growth factor as a function of redshift (normalized to unity at redshift zero)
 
 :Parameters:
 
@@ -210,14 +210,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.growthfactor_num(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.growthfactor_num(0.5)
 
 "
 
 %feature("docstring") cosmology::dlnDdln1pz
-" Negative of the logarithmic derivative of growth factor with scale factor
+"Negative of the logarithmic derivative of growth factor with scale factor
 
 :Parameters:
 
@@ -229,15 +229,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.dlnDdln1pz(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.dlnDdln1pz(0.5)
 
 "
 
 
 %feature("docstring") cosmology::Omega
-" Matter density parameter at redshift z
+"Matter density parameter at redshift z
 
 :Parameters:
 
@@ -249,15 +249,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Omega(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Omega(0.5)
 
 "
 
 
 %feature("docstring") cosmology::Omegaw
-" Dark energy density parameter at redshift z
+"Dark energy density parameter at redshift z
 
 :Parameters:
 
@@ -269,15 +269,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Omegaw(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Omegaw(0.5)
 
 "
 
 
 %feature("docstring") cosmology::Delta_crit
-" Virial density contrast at redshift z a'la Bryan and Norman '98
+"Virial density contrast at redshift z a'la Bryan and Norman '98
 
 :Parameters:
 
@@ -289,14 +289,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Delta_crit(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Delta_crit(0.5)
 
 "
 
 %feature("docstring") cosmology::set_optmf
-" Set mass function option
+"Set mass function option
 
 :Parameters:
 
@@ -311,14 +311,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.set_optmf(1)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.set_optmf(1)
 
 "
 
 %feature("docstring") cosmology::Delta2_L_num
-" Power per logarithmic k interval in the linear matter power spectrum Delta^2(k,z)
+"Power per logarithmic k interval in the linear matter power spectrum Delta^2(k,z)
 
 :Parameters:
 
@@ -331,14 +331,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Delta2_L_num(0.1,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Delta2_L_num(0.1,0.0)
 
 "
 
 %feature("docstring") cosmology::Delta2_NL_num
-" Power per logarithmic k interval in the nonlinear matter power spectrum Delta^2_NL(k,z)
+"Power per logarithmic k interval in the nonlinear matter power spectrum Delta^2_NL(k,z)
 
 :Parameters:
 
@@ -351,14 +351,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Delta2_NL_num(0.1,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Delta2_NL_num(0.1,0.0)
 
 "
 
 %feature("docstring") cosmology::xi_L_num
-" Linear matter correlation function
+"Linear matter correlation function
 
 :Parameters:
 
@@ -371,14 +371,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.xi_L_num(0.1,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.xi_L_num(0.1,0.0)
 
 "
 
 %feature("docstring") cosmology::xi_NL_num
-" Non-Linear matter correlation function
+"Non-Linear matter correlation function
 
 :Parameters:
 
@@ -391,14 +391,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.xi_NL_num(0.1,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.xi_NL_num(0.1,0.0)
 
 "
 
 %feature("docstring") cosmology::nofm
-" Mass function as a function of mass and redshift
+"Mass function as a function of mass and redshift
 
 :Parameters:
 
@@ -411,14 +411,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.nofm(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.nofm(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::bias
-" Halo bias function as a function of mass and redshift
+"Halo bias function as a function of mass and redshift
 
 :Parameters:
 
@@ -431,14 +431,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.bias(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.bias(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::varM_TH_num
-" Variance of fluctuations on a given mass scale [sigma^2(M,z)]
+"Variance of fluctuations on a given mass scale [sigma^2(M,z)]
 
 :Parameters:
 
@@ -451,14 +451,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.varM_TH_num(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.varM_TH_num(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::varM_TH_num_deriv
-" dln sigma^2/dln M
+"dln sigma^2/dln M
 
 :Parameters:
 
@@ -471,15 +471,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.varM_TH_num_deriv(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.varM_TH_num_deriv(1e12,0.0)
 
 "
 
 
 %feature("docstring") cosmology::Nplus
-" Number density of halos with mass above a given mass at a given redshift
+"Number density of halos with mass above a given mass at a given redshift
 
 :Parameters:
 
@@ -492,14 +492,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.Nplus(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.Nplus(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::getM
-" Find mass such that halos with mass larger than it have a given number density at a given redshift
+"Find mass such that halos with mass larger than it have a given number density at a given redshift
 
 :Parameters:
 
@@ -512,14 +512,14 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.getM(1e-6,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.getM(1e-6,0.0)
 
 "
 
 %feature("docstring") cosmology::modelNFWhalo
-" Output the virial mass, physical virial radius, virial
+"Output the virial mass, physical virial radius, virial
 concentration of a halo, its physical radius with density
 contrast 200m and the corresponding concentration c200m
 given a mass M200m at redshift z
@@ -539,14 +539,14 @@ given a mass M200m at redshift z
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.modelNFWhalo(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.modelNFWhalo(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::modelNFWhalo_com
-" Output the virial mass, comoving virial radius, virial
+"Output the virial mass, comoving virial radius, virial
 concentration of a halo, its comoving radius with density
 contrast 200m and the corresponding concentration c200m
 given a mass M200m at redshift z
@@ -566,15 +566,14 @@ given a mass M200m at redshift z
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.modelNFWhalo_com(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.modelNFWhalo_com(1e12,0.0)
 
 "
 
 %feature("docstring") cosmology::conc
-" 
-Concentration of halos
+"Concentration of halos
 
 :Parameters:
 
@@ -587,9 +586,9 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
-    >>> a.conc(1e12,0.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+>>> a.conc(1e12,0.0)
 
 "
 
@@ -606,14 +605,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.Eofz(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.Eofz(0.5)
     1.28111279753
 "
 
 %feature("docstring") cosmology::setnew_z
-" Reset the global redshift at which many of the splines in the cosmology code are initialized. This is rarely used function.
+"Reset the global redshift at which many of the splines in the cosmology code are initialized. This is rarely used function.
 
 :Parameters:
 
@@ -625,14 +624,15 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.setnew_z(0.5)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.setnew_z(0.5)
+    1
 "
 
 
 %feature("docstring") cosmology::gets8
-" Output value of sigma8
+"Output value of sigma8
 
 :Parameters:
 
@@ -644,13 +644,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.gets8()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.gets8()
 "
 
 %feature("docstring") cosmology::getOmb
-" Output value of Omegab
+"Output value of Omegab
 
 :Parameters:
 
@@ -662,13 +662,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.getOmb()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.getOmb()
 "
 
 %feature("docstring") cosmology::geth
-" Output value of h value
+"Output value of h value
 
 :Parameters:
 
@@ -680,14 +680,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.geth()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.geth()
 "
 
 
 %feature("docstring") cosmology::getns
-" Output value of spectral index
+"Output value of spectral index
 
 :Parameters:
 
@@ -699,13 +699,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.getns()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.getns()
 "
 
 %feature("docstring") cosmology::getxinlzetamax
-" Returns the value of psi from van den Bosch 2013
+"Returns the value of psi from van den Bosch 2013
 
 :Parameters:
 
@@ -717,13 +717,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.getxinlzetamax()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.getxinlzetamax()
 "
 
 %feature("docstring") cosmology::get_cfac
-" Returns factor multiplying all concentrations calculated by the code
+"Returns factor multiplying all concentrations calculated by the code
 
 :Parameters:
 
@@ -735,13 +735,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.get_cfac()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.get_cfac()
 "
 
 %feature("docstring") cosmology::set_cfac
-" Sets factor multiplying all concentrations calculated by the code
+"Sets factor multiplying all concentrations calculated by the code
 
 :Parameters:
 
@@ -753,13 +753,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.set_cfac(1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.set_cfac(1.0)
 "
 
 %feature("docstring") cosmology::getzmax
-" Get the maximum redshift to which a galaxy can be observed by SDSS spectroscopic survey
+"Get the maximum redshift to which a galaxy can be observed by SDSS spectroscopic survey
 
 :Parameters:
 
@@ -771,14 +771,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.getzmax(1e12)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.getzmax(1e12)
 "
 
 
 %feature("docstring") cosmology::getLmin
-" Get the minimum luminosity of galaxies that can be observed by SDSS spectroscopic survey at a given redshift
+"Get the minimum luminosity of galaxies that can be observed by SDSS spectroscopic survey at a given redshift
 
 :Parameters:
 
@@ -790,14 +790,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.getLmin(0.1)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.getLmin(0.1)
 "
 
 
 %feature("docstring") cosmology::Time
-" Get the time in units of 1/(H_0 km/s/Mpc/yr)
+"Get the time in units of 1/(H_0 km/s/Mpc/yr)
 
 :Parameters:
 
@@ -809,14 +809,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.Time(0.1)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.Time(0.1)
 "
 
 
 %feature("docstring") cosmology::Lookback
-" Get the lookback time in units of 1/(H_0 km/s/Mpc/yr)
+"Get the lookback time in units of 1/(H_0 km/s/Mpc/yr)
 
 :Parameters:
 
@@ -828,14 +828,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.Lookback(0.1)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.Lookback(0.1)
 "
 
 
 %feature("docstring") cosmology::wpnl
-" Get the projected non-linear matter correlation function
+"Get the projected non-linear matter correlation function
 
 :Parameters:
 
@@ -849,13 +849,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.wpnl(0.1,0.1,100.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.wpnl(0.1,0.1,100.0)
 "
 
 %feature("docstring") cosmology::wpl
-" Get the projected linear matter correlation function
+"Get the projected linear matter correlation function
 
 :Parameters:
 
@@ -869,14 +869,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.wpl(0.1,0.1,100.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.wpl(0.1,0.1,100.0)
 "
 
 
 %feature("docstring") cosmology::wpnl_kaiser
-" Get the projected non-linear matter correlation function accounting for Kaiser effects
+"Get the projected non-linear matter correlation function accounting for Kaiser effects
 
 :Parameters:
 
@@ -891,13 +891,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.wpnl_kaiser(0.1,0.1,100.0,1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.wpnl_kaiser(0.1,0.1,100.0,1.0)
 "
 
 %feature("docstring") cosmology::wpl_kaiser
-" Get the projected linear matter correlation function accounting for Kaiser effect
+"Get the projected linear matter correlation function accounting for Kaiser effect
 
 :Parameters:
 
@@ -912,14 +912,14 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.wpl_kaiser(0.1,0.1,100.0,1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.wpl_kaiser(0.1,0.1,100.0,1.0)
 "
 
 
 %feature("docstring") cosmology::xi_NL_kaiser
-" Get the non-linear matter correlation function accounting for Kaiser effects
+"Get the non-linear matter correlation function accounting for Kaiser effects
 
 :Parameters:
 
@@ -934,13 +934,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.xi_nl_kaiser(0.1,0.1,0.5,1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.xi_nl_kaiser(0.1,0.1,0.5,1.0)
 "
 
 %feature("docstring") cosmology::xi_L_kaiser
-" Get the linear matter correlation function accounting for Kaiser effect
+"Get the linear matter correlation function accounting for Kaiser effect
 
 :Parameters:
 
@@ -955,13 +955,13 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.xi_L_kaiser(0.1,0.1,0.5,1.0)
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.xi_L_kaiser(0.1,0.1,0.5,1.0)
 "
 
 %feature("docstring") cosmology::rsound
-" Get the comoving sound horizon at the drag epoch
+"Get the comoving sound horizon at the drag epoch
 
 :Parameters:
 
@@ -973,9 +973,9 @@ Concentration of halos
 
 :Examples:
 
-    >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
-    >>> a.rsound()
+>>> import cosmology as cc
+>>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a.rsound()
 "
 
 %include "cosmology.h"

@@ -419,61 +419,61 @@ class cosmology
         // Basic cosmology
         cosmology(); //Constructor
         ~cosmology(); //Destructor
-        cosmology(double,double,double,double,double,double,double,double,double,double,double); //Constructor
+        cosmology(double om0,double omk,double w0,double wa,double omb,double h,double theta,double sigma8,double ns,double ximax,double cfac); //Constructor
         cosmology(cosmo); //Constructor
 	void cosmo_free();
 
         // Different distances
-        double Dcofz(double);    //Comoving distance h^{-1} Mpc
-        double Dlofz(double);     //Luminosity distance h^{-1} Mpc
-        double Daofz(double);     //Angular diameter distance h^{-1} Mpc
-        double Daofzlh(double,double);     //Angular diameter distance h^{-1} Mpc
+        double Dcofz(double z);    //Comoving distance h^{-1} Mpc
+        double Dlofz(double z);     //Luminosity distance h^{-1} Mpc
+        double Daofz(double z);     //Angular diameter distance h^{-1} Mpc
+        double Daofzlh(double zl, double zh);     //Angular diameter distance h^{-1} Mpc
 
         // Growth factor and f for redshift space distortions
-        double growthfactor_num(double); // Interpolating routine        
+        double growthfactor_num(double z); // Interpolating routine        
         double dlnDdln1pz(double z);
 
         // Density parameters as a function of redshift
-        double Omega(double);       //Omega(z) 
-        double Omegaw(double);       //Omegaw(z) 
+        double Omega(double z);       //Omega(z) 
+        double Omegaw(double z);       //Omegaw(z) 
 
         // Virial overdensity 
-        double Delta_crit(double);  //Delta_crit(z), Bryan and Norman '98
+        double Delta_crit(double z);  //Delta_crit(z), Bryan and Norman '98
 
-	void set_optmf(int); // Set the mass function option
+	void set_optmf(int opt); // Set the mass function option
 
         // Power spectrum calculations
-        double Delta2_L_num(double,double);     // Numerical \Delta^2(k) Power spectrum, k should be in units of h Mpc^{-1} wrapper
-        double Delta2_NL_num(double,double);    // Numerical Non-linear \Delta^2(k),  k should be in units of h Mpc^{-1}
+        double Delta2_L_num(double k,double z);     // Numerical \Delta^2(k) Power spectrum, k should be in units of h Mpc^{-1} wrapper
+        double Delta2_NL_num(double k,double z);    // Numerical Non-linear \Delta^2(k),  k should be in units of h Mpc^{-1}
 
-	double xi_L_num(double,double);
-	double xi_NL_num(double,double);
+	double xi_L_num(double k,double z);
+	double xi_NL_num(double k,double z);
 
 	// Mass and bias function wrappers
-        double nofm(double,double);
-        double bias(double,double);
+        double nofm(double M,double z);
+        double bias(double M,double z);
 	
 	// Variance related functions
-	double varM_TH_num(double,double);       
-	double varM_TH_num_deriv(double,double);
+	double varM_TH_num(double M,double z);       
+	double varM_TH_num_deriv(double M,double z);
 
 	// Group catalog related functions
         // Number density of haloes above mass M
-        double Nplus(double, double);
+        double Nplus(double M200, double z);
         // Get mass M to obtain a given Number density of haloes above this mass
-        double getM(double,double);
+        double getM(double Nplus,double z);
 
         //NFW profile related functions
-        void modelNFWhalo(double,double,double&,double&,double&,double&,double&); // Radii in physical units
-        void modelNFWhalo_com(double,double,double&,double&,double&,double&,double&); // Mvir, Rvir, cvir, R200, c200
+        void modelNFWhalo(double M200,double z,double&,double&,double&,double&,double&); // Radii in physical units
+        void modelNFWhalo_com(double M200,double z,double&,double&,double&,double&,double&); // Mvir, Rvir, cvir, R200, c200
         //void modelNFWhalo_com(double,double,double&,double&,double&); //Mvir, Rvir, cvir
 
-        double conc(double,double); //Concentration parameter wrapper
+        double conc(double Mvir,double z); //Concentration parameter wrapper
 
-        double Eofz(double);        //Eofz(z) 
+        double Eofz(double z);        //Eofz(z) 
 
 	/// Set new z
-	void setnew_z(double);
+	void setnew_z(double z);
 
 	/// Access to private variables
 	double gets8();
@@ -482,23 +482,23 @@ class cosmology
 	double getns();
     double getxinlzetamax();
     double get_cfac();
-    double set_cfac(double);
+    double set_cfac(double cfac);
 
     /// SDSS survey specific functions
     double getzmax(double xL);
     double getLmin(double z, double L1);
 
-    double Time(double);        //Time(z) units 1/H0
-    double Lookback(double);    //Lookback time(z) units 1/H0
+    double Time(double z);        //Time(z) units 1/H0
+    double Lookback(double z);    //Lookback time(z) units 1/H0
 
-    double wpnl(double,double,double);
+    double wpnl(double z,double rad,double projmax);
     double wpl(double z,double rad, double projmax);
 
     double wpnl_kaiser(double z,double rad, double projmax,double fkai);
-    double xi_NL_kaiser(double x,double arg, double z,double fkai);
+    double xi_NL_kaiser(double r,double z, double mu,double fkai);
 
     double wpl_kaiser(double z,double rad, double projmax,double fkai);
-    double xi_L_kaiser(double x,double arg, double z,double fkai);
+    double xi_L_kaiser(double r,double z, double mu,double fkai);
 
     /// New functionality added renew cosmology
     void renew(cosmo p);
@@ -507,9 +507,9 @@ class cosmology
     double rsound();
 
     /// Functions to calculate distances given ra and dec
-    double get_deltapi(double,double);
-    double get_sinsqang(double,double,double,double,double,double);
-    double get_logrp(double,double,double,double,double,double,double);
+    double get_deltapi(double z1,double z2);
+    double get_sinsqang(double x1,double y1,double z1,double x2,double y2,double z2);
+    double get_logrp(double x1,double y1,double z1,double x2,double y2,double z2, double Chisq);
 
 };
 
