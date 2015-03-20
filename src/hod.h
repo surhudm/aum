@@ -187,41 +187,41 @@ class hod : public cosmology
     hod();
 
     // Halo occupation as a function of mass 
-    double ncen(double);           // <Ncen>(M)
-    double nsat(double);           // <Nsat>(M)
+    double ncen(double logM);           // <Ncen>(M)
+    double nsat(double logM);           // <Nsat>(M)
 
 
     // Galaxy abundance as a function of redshift
-    double ncenz(double);           // <Ncen>(z)
-    double nsatz(double);           // <Nsat>(z)
+    double ncenz(double z);           // <Ncen>(z)
+    double nsatz(double z);           // <Nsat>(z)
 
     // Average total halo mass, average central halo mass, and average galaxy
     // bias
-    double avmass_tot(double);
-    double avmass_cen(double);
-    double galaxy_bias(double);
+    double avmass_tot(double z);
+    double avmass_cen(double z);
+    double galaxy_bias(double z);
 
     // Access to cosmological variables
     double gets8();
     double geth();
     double getOmb();
     double getOmk();
-    double set_cfactor(double);
+    double set_cfactor(double cfac);
 
     /// Power spectra interpolation
-    double D2gg_num(double,double);
-    double D2gd_num(double,double);
+    double D2gg_num(double k,double z);
+    double D2gd_num(double k,double z);
 
     /// Numerical interpolation of correlation functions
-    double xigg_num(double,double);
-    double xigd_num(double,double);
+    double xigg_num(double r,double z);
+    double xigd_num(double r,double z);
 
     /// The projection integrals
-    double Wp_ESD(double,int,int,double[],double[],double[],double[],int,double,bool reset=true);
-    double Wp(double,int,double[],double[],double,bool reset=true);
-    double Wp_Kaiser(double,int,double[],double[],double,bool reset=true);
-    double ESD(double, int, double[], double[],int,bool reset=true);
-    double Sigma(double, int, double[], double[],bool reset=true, double xfgm_m0=-99.0, double xfgm_slp=-99.0,double pimax=-80.0);
+    double Wp_ESD(double z,int wpbins,int esdbins,double rp[],double esdrp[],double wp[],double esd[],int esdbins2,double pimax,bool reset=true);
+    double Wp(double z,int wpbins,double rp[],double wp[],double pimax,bool reset=true);
+    double Wp_Kaiser(double z,int wpbins,double rp[],double wp[],double pimax,bool reset=true);
+    double ESD(double z, int esdbins, double rp[], double esd[],int esdbins2,bool reset=true);
+    double Sigma(double z, int esdbins, double rp[], double sigma[],bool reset=true, double xfgm_m0=-99.0, double xfgm_slp=-99.0,double pimax=-80.0);
 
     /// The halo model power spectrum
     double pspec_halomodel(double z);
