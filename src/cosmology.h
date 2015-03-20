@@ -373,6 +373,12 @@ class cosmology
     double getzeta_rmax();
     double getzetamax();
 
+    // FT(FT(P(k)))
+    double Pktest_L(double,double);
+    double Pktest_NL(double,double);
+    double Pktest_zetaNL(double,double);
+
+
     //Friends
     friend double dTime(double,void*);
     friend double dChi (double,void*);
@@ -442,11 +448,6 @@ class cosmology
 
 	double xi_L_num(double,double);
 	double xi_NL_num(double,double);
-
-	// FT(FT(P(k)))
-	double Pktest_L(double,double);
-	double Pktest_NL(double,double);
-	double Pktest_zetaNL(double,double);
 
 	// Mass and bias function wrappers
         double nofm(double,double);

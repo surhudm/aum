@@ -70,6 +70,93 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 "
 
+%feature("docstring") cosmology::get_sinsqang
+" Calculate the square of the sin of the angle between two galaxies
+
+:Parameters:
+
+-   x1 : Cartesian x for the unit vector pointing at Galaxy 1
+-   y1 : Cartesian y for the unit vector pointing at Galaxy 1
+-   z1 : Cartesian z for the unit vector pointing at Galaxy 1
+-   x2 : Cartesian x for the unit vector pointing at Galaxy 2
+-   y2 : Cartesian y for the unit vector pointing at Galaxy 2
+-   z2 : Cartesian z for the unit vector pointing at Galaxy 2
+
+:Returns:
+
+-   Square of the sin of the angle between two galaxies
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.get_sinsqang(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
+
+"
+%feature("docstring") cosmology::get_logrp
+" Calculate the projected separation between two galaxies
+
+:Parameters:
+
+-   x1 : Cartesian x for the unit vector pointing at Galaxy 1
+-   y1 : Cartesian y for the unit vector pointing at Galaxy 1
+-   z1 : Cartesian z for the unit vector pointing at Galaxy 1
+-   x2 : Cartesian x for the unit vector pointing at Galaxy 2
+-   y2 : Cartesian y for the unit vector pointing at Galaxy 2
+-   z2 : Cartesian z for the unit vector pointing at Galaxy 2
+
+:Returns:
+
+-   Log of projected separation between two galaxies
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.get_logrp(0.0, 1.0, 0.0, 1.0, 0.0, 0.0)
+
+"
+
+
+%feature("docstring") cosmology::get_deltapi
+" Calculate the line of sight separation between two galaxies
+
+:Parameters:
+
+-   z1 : Redshift
+-   z2 : Redshift
+
+:Returns:
+
+-   Line of sight separation between two galaxies
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.get_deltapi(0.0, 0.2)
+
+"
+
+%feature("docstring") cosmology::Dlofz
+" Luminosity distance as a function of redshift
+
+:Parameters:
+
+-   z : Redshift
+
+:Returns:
+
+-   Luminosity distance
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.Dlofz(0.5)
+
+"
+
 
 %feature("docstring") cosmology::Daofz
 " Angular diameter distance as a function of redshift
@@ -618,7 +705,7 @@ Concentration of halos
 "
 
 %feature("docstring") cosmology::getxinlzetamax
-" Returns the value of psi from van den Bsch 2013
+" Returns the value of psi from van den Bosch 2013
 
 :Parameters:
 
