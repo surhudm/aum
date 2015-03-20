@@ -122,15 +122,38 @@ Run the following commands from inside the aum directory</p>
 <dd><p>Proxy of C++ cosmology class</p>
 <dl class="method">
 <dt id="cosmology.cosmology.Daofz">
-<code class="descname">Daofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Daofz" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Daofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Daofz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Angular diameter distance as a function of redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Angular diameter distance</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Angular diameter distance</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Daofz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -140,16 +163,39 @@ Run the following commands from inside the aum directory</p>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Daofzlh">
-<code class="descname">Daofzlh</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Daofzlh" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Daofzlh</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double zl</em>, <em>double zh</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Daofzlh" title="Permalink to this definition">¶</a></dt>
 <dd><p>Angular diameter distance as a function of redshift of lens and source</p>
-<p>Parameters:</p>
-<blockquote>
-<div>zl : Redshift of lens
-zh : Redshift of source</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Angular diameter distance between two redshifts</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>zl : Redshift of lens</li>
+<li>zh : Redshift of source</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Angular diameter distance between two redshifts</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Daofzlh</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -159,15 +205,38 @@ zh : Redshift of source</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Dcofz">
-<code class="descname">Dcofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Dcofz" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Dcofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Dcofz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Comoving distance as a function of redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Comoving distance</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Comoving distance</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Dcofz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -177,16 +246,39 @@ zh : Redshift of source</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Delta2_L_num">
-<code class="descname">Delta2_L_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta2_L_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Delta2_L_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta2_L_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Power per logarithmic k interval in the linear matter power spectrum Delta^2(k,z)</p>
-<p>Parameters:</p>
-<blockquote>
-<div>k: Wavenumber (in h Mpc^{-1})
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Delta^2(k,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>k: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Delta^2(k,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Delta2_L_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -196,16 +288,39 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Delta2_NL_num">
-<code class="descname">Delta2_NL_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta2_NL_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Delta2_NL_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta2_NL_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Power per logarithmic k interval in the nonlinear matter power spectrum Delta^2_NL(k,z)</p>
-<p>Parameters:</p>
-<blockquote>
-<div>k: Wavenumber (in h Mpc^{-1})
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Nonlinear Delta^2(k,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>k: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Nonlinear Delta^2(k,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Delta2_NL_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -215,15 +330,38 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Delta_crit">
-<code class="descname">Delta_crit</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta_crit" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Delta_crit</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Delta_crit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Virial density contrast at redshift z a&#8217;la Bryan and Norman &#8216;98</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Virial density contrast (with respect to critical density at redshift z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Virial density contrast (with respect to critical density at redshift z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Delta_crit</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -233,12 +371,48 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Dlofz">
-<code class="descname">Dlofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Dlofz" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">Dlofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Dlofz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Luminosity distance as a function of redshift</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Luminosity distance</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Dlofz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Eofz">
-<code class="descname">Eofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Eofz" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Eofz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Eofz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the cosmological expansion function E(z)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -266,29 +440,52 @@ z: Redshift</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Eofz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="go">1.28111279753</span>
-</pre></div>
-</div>
-</td>
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Eofz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">    1.28111279753</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Lookback">
-<code class="descname">Lookback</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Lookback" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the lookback time in units of 1/(100 km/s/Mpc/yr)</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Lookback Time : in units of 1/(100 km/s/Mpc/yr)</div></blockquote>
-<p>Examples:</p>
+<code class="descname">Lookback</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Lookback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the lookback time in units of 1/(H_0 km/s/Mpc/yr)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Lookback Time : in units of 1/(H_0 km/s/Mpc/yr)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Lookback</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -298,16 +495,39 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Nplus">
-<code class="descname">Nplus</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Nplus" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Nplus</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M200</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Nplus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Number density of halos with mass above a given mass at a given redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M: Mass (in hinv Msun)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>N(&gt;M,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (in hinv Msun)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>N(&gt;M,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Nplus</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -317,15 +537,38 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Omega">
-<code class="descname">Omega</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Omega" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Omega</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Omega" title="Permalink to this definition">¶</a></dt>
 <dd><p>Matter density parameter at redshift z</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Matter density parameter at redshift z</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Matter density parameter at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Omega</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -335,15 +578,38 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.Omegaw">
-<code class="descname">Omegaw</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Omegaw" title="Permalink to this definition">¶</a></dt>
+<code class="descname">Omegaw</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Omegaw" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dark energy density parameter at redshift z</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Dark energy density parameter at redshift z</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Dark energy density parameter at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Omegaw</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -352,31 +618,39 @@ z: Redshift</div></blockquote>
 </dd></dl>
 
 <dl class="method">
-<dt id="cosmology.cosmology.Pktest_L">
-<code class="descname">Pktest_L</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Pktest_L" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cosmology.cosmology.Pktest_NL">
-<code class="descname">Pktest_NL</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Pktest_NL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
-<dt id="cosmology.cosmology.Pktest_zetaNL">
-<code class="descname">Pktest_zetaNL</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Pktest_zetaNL" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="method">
 <dt id="cosmology.cosmology.Time">
-<code class="descname">Time</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Time" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get the time in units of 1/(100 km/s/Mpc/yr)</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Time : in units of 1/(100 km/s/Mpc/yr)</div></blockquote>
-<p>Examples:</p>
+<code class="descname">Time</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.Time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the time in units of 1/(H_0 km/s/Mpc/yr)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Time : in units of 1/(H_0 km/s/Mpc/yr)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Time</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -388,8 +662,8 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; cosmology<a class="headerlink" href="#cosmology.cosmology.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>__init__(cosmology self, double arg2, double arg3, double arg4, double arg5, double arg6, double arg7, double arg8, </dt>
-<dd>double arg9, double arg10, double arg11, double arg12) -&gt; cosmology</dd>
+<dt>__init__(cosmology self, double om0, double omk, double w0, double wa, double omb, double h, double theta, </dt>
+<dd>double sigma8, double ns, double ximax, double cfac) -&gt; cosmology</dd>
 </dl>
 <p>__init__(cosmology self, cosmo arg2) -&gt; cosmology</p>
 <p>Initializes cosmology object</p>
@@ -422,23 +696,24 @@ z: Redshift</div></blockquote>
 </tr>
 </tbody>
 </table>
-<ul class="simple">
-<li>Cosmology object</li>
-</ul>
+<ul>
+<li><p class="first">Cosmology object</p>
 <p>Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=log10(8.0).</p>
+</li>
+</ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
@@ -455,16 +730,39 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.bias">
-<code class="descname">bias</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.bias" title="Permalink to this definition">¶</a></dt>
+<code class="descname">bias</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.bias" title="Permalink to this definition">¶</a></dt>
 <dd><p>Halo bias function as a function of mass and redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M: Mass (in hinv Msun)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Large scale halo bias</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (in hinv Msun)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Large scale halo bias</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">bias</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -474,7 +772,7 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.conc">
-<code class="descname">conc</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.conc" title="Permalink to this definition">¶</a></dt>
+<code class="descname">conc</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double Mvir</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.conc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Concentration of halos</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -503,15 +801,15 @@ z: Redshift</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">conc</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
@@ -522,28 +820,51 @@ z: Redshift</div></blockquote>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">cosmo_free</span><span class="p">()</span>
 </pre></div>
 </div>
-</td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.dlnDdln1pz">
 <code class="descname">dlnDdln1pz</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.dlnDdln1pz" title="Permalink to this definition">¶</a></dt>
 <dd><p>Negative of the logarithmic derivative of growth factor with scale factor</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Negative of the logarithmic derivative of growth factor with scale factor</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Negative of the logarithmic derivative of growth factor with scale factor</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">dlnDdln1pz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -555,13 +876,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.getLmin">
 <code class="descname">getLmin</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em>, <em>double L1</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getLmin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the minimum luminosity of galaxies that can be observed by SDSS spectroscopic survey at a given redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>xL: Luminosity in h^{-2} Lsun</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xL: Luminosity in h^{-2} Lsun</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getLmin</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
@@ -571,16 +915,39 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.getM">
-<code class="descname">getM</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getM" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getM</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double Nplus</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getM" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find mass such that halos with mass larger than it have a given number density at a given redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>Nplus: Target number density (in h^3 Mpc^{-3})
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>M: Mass (hinv Msun)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Nplus: Target number density (in h^3 Mpc^{-3})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (hinv Msun)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getM</span><span class="p">(</span><span class="mf">1e-6</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -592,13 +959,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.getOmb">
 <code class="descname">getOmb</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getOmb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of Omegab</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Omegab : Baryon density parameter</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Omegab : Baryon density parameter</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getOmb</span><span class="p">()</span>
@@ -610,13 +1000,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.get_cfac">
 <code class="descname">get_cfac</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_cfac" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns factor multiplying all concentrations calculated by the code</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>cfac : Factor multiplying all concentrations output by the code</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>cfac : Factor multiplying all concentrations output by the code</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">get_cfac</span><span class="p">()</span>
@@ -626,30 +1039,172 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.get_deltapi">
-<code class="descname">get_deltapi</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_deltapi" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">get_deltapi</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z1</em>, <em>double z2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_deltapi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the line of sight separation between two galaxies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z1 : Redshift</li>
+<li>z2 : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Line of sight separation between two galaxies</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">get_deltapi</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.get_logrp">
-<code class="descname">get_logrp</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em>, <em>double arg4</em>, <em>double arg5</em>, <em>double arg6</em>, <em>double arg7</em>, <em>double arg8</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_logrp" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">get_logrp</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double x1</em>, <em>double y1</em>, <em>double z1</em>, <em>double x2</em>, <em>double y2</em>, <em>double z2</em>, <em>double Chisq</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_logrp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the projected separation between two galaxies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>x1 : Cartesian x for the unit vector pointing at Galaxy 1</li>
+<li>y1 : Cartesian y for the unit vector pointing at Galaxy 1</li>
+<li>z1 : Cartesian z for the unit vector pointing at Galaxy 1</li>
+<li>x2 : Cartesian x for the unit vector pointing at Galaxy 2</li>
+<li>y2 : Cartesian y for the unit vector pointing at Galaxy 2</li>
+<li>z2 : Cartesian z for the unit vector pointing at Galaxy 2</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Log of projected separation between two galaxies</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">get_logrp</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.get_sinsqang">
-<code class="descname">get_sinsqang</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em>, <em>double arg4</em>, <em>double arg5</em>, <em>double arg6</em>, <em>double arg7</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_sinsqang" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">get_sinsqang</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double x1</em>, <em>double y1</em>, <em>double z1</em>, <em>double x2</em>, <em>double y2</em>, <em>double z2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_sinsqang" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the square of the sin of the angle between two galaxies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>x1 : Cartesian x for the unit vector pointing at Galaxy 1</li>
+<li>y1 : Cartesian y for the unit vector pointing at Galaxy 1</li>
+<li>z1 : Cartesian z for the unit vector pointing at Galaxy 1</li>
+<li>x2 : Cartesian x for the unit vector pointing at Galaxy 2</li>
+<li>y2 : Cartesian y for the unit vector pointing at Galaxy 2</li>
+<li>z2 : Cartesian z for the unit vector pointing at Galaxy 2</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Square of the sin of the angle between two galaxies</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">get_sinsqang</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.geth">
 <code class="descname">geth</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.geth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of h value</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>h : Hubble parameter</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>h : Hubble parameter</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">geth</span><span class="p">()</span>
@@ -661,13 +1216,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.getns">
 <code class="descname">getns</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of spectral index</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>ns : Spectral index of initial density fluctuations</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>ns : Spectral index of initial density fluctuations</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getns</span><span class="p">()</span>
@@ -679,13 +1257,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.gets8">
 <code class="descname">gets8</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.gets8" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of sigma8</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No inputs</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>sigma8 : sigma8</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No inputs</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>sigma8 : sigma8</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">gets8</span><span class="p">()</span>
@@ -696,14 +1297,37 @@ z: Redshift</div></blockquote>
 <dl class="method">
 <dt id="cosmology.cosmology.getxinlzetamax">
 <code class="descname">getxinlzetamax</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getxinlzetamax" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the value of psi from van den Bsch 2013</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>psi : Psi defined in van den Bosch 2013</div></blockquote>
-<p>Examples:</p>
+<dd><p>Returns the value of psi from van den Bosch 2013</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>psi : Psi defined in van den Bosch 2013</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getxinlzetamax</span><span class="p">()</span>
@@ -715,13 +1339,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.getzmax">
 <code class="descname">getzmax</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double xL</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getzmax" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the maximum redshift to which a galaxy can be observed by SDSS spectroscopic survey</p>
-<p>Parameters:</p>
-<blockquote>
-<div>xL: Luminosity in h^{-2} Lsun</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xL: Luminosity in h^{-2} Lsun</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getzmax</span><span class="p">(</span><span class="mf">1e12</span><span class="p">)</span>
@@ -731,15 +1378,38 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.growthfactor_num">
-<code class="descname">growthfactor_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.growthfactor_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">growthfactor_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.growthfactor_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Growth factor as a function of redshift (normalized to unity at redshift zero)</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Growth factor at redshift z</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Growth factor at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">growthfactor_num</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
@@ -751,25 +1421,48 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.modelNFWhalo">
 <code class="descname">modelNFWhalo</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>modelNFWhalo(cosmology self, double arg2, double arg3, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
+<dt>modelNFWhalo(cosmology self, double M200, double z, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
 <dd>double &amp; arg8)</dd>
 </dl>
 <p>Output the virial mass, physical virial radius, virial
-oncentration of a halo, its physical radius with density
-ontrast 200m and the corresponding concentration c200m
-iven a mass M200m at redshift z</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M200m: Mass (hinv Msun) defined 200 times overdense with respect to the background
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Mvir : The virial mass (hinv Msun)
-Rvir : The physical virial radius (hinv Mpc)
-cvir : The virial concentration
-R200m : The physical boundary of halo 200 times overdense with respect to background density (hinv Mpc)
-c200m : The concentration of halo 200 times overdense with respect to background density</div></blockquote>
-<p>Examples:</p>
+concentration of a halo, its physical radius with density
+contrast 200m and the corresponding concentration c200m
+given a mass M200m at redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M200m: Mass (hinv Msun) defined 200 times overdense with respect to the background</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Mvir : The virial mass (hinv Msun)</li>
+<li>Rvir : The physical virial radius (hinv Mpc)</li>
+<li>cvir : The virial concentration</li>
+<li>R200m : The physical boundary of halo 200 times overdense with respect to background density (hinv Mpc)</li>
+<li>c200m : The concentration of halo 200 times overdense with respect to background density</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">modelNFWhalo</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -781,25 +1474,48 @@ c200m : The concentration of halo 200 times overdense with respect to background
 <dt id="cosmology.cosmology.modelNFWhalo_com">
 <code class="descname">modelNFWhalo_com</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo_com" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>modelNFWhalo_com(cosmology self, double arg2, double arg3, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
+<dt>modelNFWhalo_com(cosmology self, double M200, double z, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
 <dd>double &amp; arg8)</dd>
 </dl>
 <p>Output the virial mass, comoving virial radius, virial
-oncentration of a halo, its comoving radius with density
-ontrast 200m and the corresponding concentration c200m
-iven a mass M200m at redshift z</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M200m: Mass (hinv Msun) defined 200 times overdense with respect to the background
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Mvir : The virial mass (hinv Msun)
-Rvir : The comoving virial radius (hinv Mpc)
-cvir : The virial concentration
-R200m : The comoving boundary of halo 200 times overdense with respect to background density (hinv Mpc)
-c200m : The concentration of halo 200 times overdense with respect to background density</div></blockquote>
-<p>Examples:</p>
+concentration of a halo, its comoving radius with density
+contrast 200m and the corresponding concentration c200m
+given a mass M200m at redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M200m: Mass (hinv Msun) defined 200 times overdense with respect to the background</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Mvir : The virial mass (hinv Msun)</li>
+<li>Rvir : The comoving virial radius (hinv Mpc)</li>
+<li>cvir : The virial concentration</li>
+<li>R200m : The comoving boundary of halo 200 times overdense with respect to background density (hinv Mpc)</li>
+<li>c200m : The concentration of halo 200 times overdense with respect to background density</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">modelNFWhalo_com</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -809,16 +1525,39 @@ c200m : The concentration of halo 200 times overdense with respect to background
 
 <dl class="method">
 <dt id="cosmology.cosmology.nofm">
-<code class="descname">nofm</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.nofm" title="Permalink to this definition">¶</a></dt>
+<code class="descname">nofm</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.nofm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mass function as a function of mass and redshift</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M: Mass (in hinv Msun)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>dN(&gt;M)/dM of halos, where N(&gt;M) is the cumulative number density of halos with mass larger than M, commonly referred to as mass function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (in hinv Msun)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>dN(&gt;M)/dM of halos, where N(&gt;M) is the cumulative number density of halos with mass larger than M, commonly referred to as mass function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nofm</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -835,13 +1574,36 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.rsound">
 <code class="descname">rsound</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.rsound" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the comoving sound horizon at the drag epoch</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : None</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>rsound : Comoving sound horizon at drag epoch a&#8217;la Eisenstein and Hu 98</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : None</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>rsound : Comoving sound horizon at drag epoch a&#8217;la Eisenstein and Hu 98</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">rsound</span><span class="p">()</span>
@@ -851,15 +1613,38 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.set_cfac">
-<code class="descname">set_cfac</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.set_cfac" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_cfac</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double cfac</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.set_cfac" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sets factor multiplying all concentrations calculated by the code</p>
-<p>Parameters:</p>
-<blockquote>
-<div>cfac : Factor multiplying all concentrations output by the code</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>None : None</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>cfac : Factor multiplying all concentrations output by the code</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : None</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">set_cfac</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
@@ -869,18 +1654,41 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.set_optmf">
-<code class="descname">set_optmf</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>int arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.set_optmf" title="Permalink to this definition">¶</a></dt>
+<code class="descname">set_optmf</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>int opt</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.set_optmf" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set mass function option</p>
-<p>Parameters:</p>
-<blockquote>
-<div>option = 1: Tinker et al. 2010 mass function (well tested and consistent
-with the bias prescription
-option = 2: Sheth Tormen mass function
-option = 3: Bhattacharya et al. 2010 mass function</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Set mass function choice (default is equal to 1 if this function is not called)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>option = 1: Tinker et al. 2010 mass function (well tested and consistent
+with the bias prescription</li>
+<li>option = 2: Sheth Tormen mass function</li>
+<li>option = 3: Bhattacharya et al. 2010 mass function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Set mass function choice (default is equal to 1 if this function is not called)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">set_optmf</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -890,34 +1698,81 @@ option = 3: Bhattacharya et al. 2010 mass function</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.setnew_z">
-<code class="descname">setnew_z</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.setnew_z" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setnew_z</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.setnew_z" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reset the global redshift at which many of the splines in the cosmology code are initialized. This is rarely used function.</p>
-<p>Parameters:</p>
-<blockquote>
-<div>z : Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>None: None</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z : Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None: None</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">setnew_z</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="go">    1</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="cosmology.cosmology.varM_TH_num">
-<code class="descname">varM_TH_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.varM_TH_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">varM_TH_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.varM_TH_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Variance of fluctuations on a given mass scale [sigma^2(M,z)]</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M: Mass (in hinv Msun)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Variance of fluctuations when density field is smoothed on the lagrangian radius corresponding to a given mass scale</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (in hinv Msun)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Variance of fluctuations when density field is smoothed on the lagrangian radius corresponding to a given mass scale</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">varM_TH_num</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -927,16 +1782,39 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.varM_TH_num_deriv">
-<code class="descname">varM_TH_num_deriv</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.varM_TH_num_deriv" title="Permalink to this definition">¶</a></dt>
+<code class="descname">varM_TH_num_deriv</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.varM_TH_num_deriv" title="Permalink to this definition">¶</a></dt>
 <dd><p>dln sigma^2/dln M</p>
-<p>Parameters:</p>
-<blockquote>
-<div>M: Mass (in hinv Msun)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>dln sigma^2/dln M  (M,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>M: Mass (in hinv Msun)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>dln sigma^2/dln M  (M,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">varM_TH_num_deriv</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -948,15 +1826,38 @@ z: Redshift</div></blockquote>
 <dt id="cosmology.cosmology.wpl">
 <code class="descname">wpl</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em>, <em>double rad</em>, <em>double projmax</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.wpl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the projected linear matter correlation function</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-pimax : Line-of-sight integration limit</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>wpl : Projected linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>pimax : Line-of-sight integration limit</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>wpl : Projected linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">wpl</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">100.0</span><span class="p">)</span>
@@ -968,16 +1869,39 @@ pimax : Line-of-sight integration limit</div></blockquote>
 <dt id="cosmology.cosmology.wpl_kaiser">
 <code class="descname">wpl_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em>, <em>double rad</em>, <em>double projmax</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.wpl_kaiser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the projected linear matter correlation function accounting for Kaiser effect</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-pimax : Line-of-sight integration limit
-fkai : Kaiser factor f/b</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>wpl : Projected linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>pimax : Line-of-sight integration limit</li>
+<li>fkai : Kaiser factor f/b</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>wpl : Projected linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">wpl_kaiser</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">100.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -987,17 +1911,40 @@ fkai : Kaiser factor f/b</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.wpnl">
-<code class="descname">wpnl</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em>, <em>double arg4</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.wpnl" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wpnl</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em>, <em>double rad</em>, <em>double projmax</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.wpnl" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the projected non-linear matter correlation function</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-pimax : Line-of-sight integration limit</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>wpnl : Projected non-linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>pimax : Line-of-sight integration limit</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>wpnl : Projected non-linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">wpnl</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">100.0</span><span class="p">)</span>
@@ -1009,16 +1956,39 @@ pimax : Line-of-sight integration limit</div></blockquote>
 <dt id="cosmology.cosmology.wpnl_kaiser">
 <code class="descname">wpnl_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double z</em>, <em>double rad</em>, <em>double projmax</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.wpnl_kaiser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the projected non-linear matter correlation function accounting for Kaiser effects</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-pimax : Line-of-sight integration limit
-fkai : Kaiser factor f/b</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>wpnl_kaiser : Projected non-linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>pimax : Line-of-sight integration limit</li>
+<li>fkai : Kaiser factor f/b</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>wpnl_kaiser : Projected non-linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">wpnl_kaiser</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">100.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -1028,18 +1998,41 @@ fkai : Kaiser factor f/b</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.xi_L_kaiser">
-<code class="descname">xi_L_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double x</em>, <em>double arg</em>, <em>double z</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_L_kaiser" title="Permalink to this definition">¶</a></dt>
+<code class="descname">xi_L_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double r</em>, <em>double z</em>, <em>double mu</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_L_kaiser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the linear matter correlation function accounting for Kaiser effect</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-mu : Cosine of angle between separation vector and line of sight
-fkai : Kaiser factor f/b</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>xi_l : Linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>mu : Cosine of angle between separation vector and line of sight</li>
+<li>fkai : Kaiser factor f/b</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xi_l : Linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xi_L_kaiser</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -1049,16 +2042,39 @@ fkai : Kaiser factor f/b</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.xi_L_num">
-<code class="descname">xi_L_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_L_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">xi_L_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_L_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear matter correlation function</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r: Scale (in hinv Mpc)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Linear matter correlation function (r,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r: Scale (in hinv Mpc)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Linear matter correlation function (r,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xi_L_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -1068,18 +2084,41 @@ z: Redshift</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.xi_NL_kaiser">
-<code class="descname">xi_NL_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double x</em>, <em>double arg</em>, <em>double z</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_NL_kaiser" title="Permalink to this definition">¶</a></dt>
+<code class="descname">xi_NL_kaiser</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double r</em>, <em>double z</em>, <em>double mu</em>, <em>double fkai</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_NL_kaiser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the non-linear matter correlation function accounting for Kaiser effects</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r : Separation of galaxies
-z : Redshift
-mu : Cosine of angle between separation vector and line of sight
-fkai : Kaiser factor f/b</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>xi_nl_kaiser : Non-linear matter correlation function</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r : Separation of galaxies</li>
+<li>z : Redshift</li>
+<li>mu : Cosine of angle between separation vector and line of sight</li>
+<li>fkai : Kaiser factor f/b</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xi_nl_kaiser : Non-linear matter correlation function</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xi_nl_kaiser</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -1089,16 +2128,39 @@ fkai : Kaiser factor f/b</div></blockquote>
 
 <dl class="method">
 <dt id="cosmology.cosmology.xi_NL_num">
-<code class="descname">xi_NL_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_NL_num" title="Permalink to this definition">¶</a></dt>
+<code class="descname">xi_NL_num</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.xi_NL_num" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-Linear matter correlation function</p>
-<p>Parameters:</p>
-<blockquote>
-<div>r: Scale (in hinv Mpc)
-z: Redshift</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Non-linear matter correlation function (r,z)</div></blockquote>
-<p>Examples:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r: Scale (in hinv Mpc)</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Non-linear matter correlation function (r,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xi_NL_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
@@ -1117,55 +2179,125 @@ z: Redshift</div></blockquote>
 <dd><p>Proxy of C++ hod class</p>
 <dl class="method">
 <dt id="hod.hod.D2gd_num">
-<code class="descname">D2gd_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.D2gd_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">D2gd_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.D2gd_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Power per logarithmic k interval in the galaxy matter power spectrum Delta^2(k,z)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>k: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Delta_gd^2(k,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">D2gd_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.D2gg_num">
-<code class="descname">D2gg_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.D2gg_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">D2gg_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double k</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.D2gg_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Power per logarithmic k interval in the galaxy galaxy power spectrum Delta^2(k,z)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>k: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Delta_gg^2(k,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">D2gg_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.ESD">
-<code class="descname">ESD</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>int arg3</em>, <em>double [] arg4</em>, <em>double [] arg5</em>, <em>int arg6</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ESD" title="Permalink to this definition">¶</a></dt>
-<dd><p>ESD(hod self, double arg2, int arg3, double [] arg4, double [] arg5, int arg6) -&gt; double</p>
+<code class="descname">ESD</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int esdbins</em>, <em>double [] rp</em>, <em>double [] esd</em>, <em>int esdbins2</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ESD" title="Permalink to this definition">¶</a></dt>
+<dd><p>ESD(hod self, double z, int esdbins, double [] rp, double [] esd, int esdbins2) -&gt; double</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.Sigma">
 <code class="descname">Sigma</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.Sigma" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>Sigma(hod self, double arg2, int arg3, double [] arg4, double [] arg5, bool reset=True, double xfgm_m0=-99.0, </dt>
+<dt>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0, </dt>
 <dd>double xfgm_slp=-99.0, double pimax=-80.0) -&gt; double</dd>
-<dt>Sigma(hod self, double arg2, int arg3, double [] arg4, double [] arg5, bool reset=True, double xfgm_m0=-99.0, </dt>
+<dt>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0, </dt>
 <dd>double xfgm_slp=-99.0) -&gt; double</dd>
 </dl>
-<p>Sigma(hod self, double arg2, int arg3, double [] arg4, double [] arg5, bool reset=True, double xfgm_m0=-99.0) -&gt; double
-Sigma(hod self, double arg2, int arg3, double [] arg4, double [] arg5, bool reset=True) -&gt; double
-Sigma(hod self, double arg2, int arg3, double [] arg4, double [] arg5) -&gt; double</p>
+<p>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0) -&gt; double
+Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True) -&gt; double
+Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; double</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.Wp">
-<code class="descname">Wp</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>int arg3</em>, <em>double [] arg4</em>, <em>double [] arg5</em>, <em>double arg6</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wp(hod self, double arg2, int arg3, double [] arg4, double [] arg5, double arg6) -&gt; double</p>
+<code class="descname">Wp</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int wpbins</em>, <em>double [] rp</em>, <em>double [] wp</em>, <em>double pimax</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wp(hod self, double z, int wpbins, double [] rp, double [] wp, double pimax) -&gt; double</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.Wp_ESD">
 <code class="descname">Wp_ESD</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.Wp_ESD" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
-<dt>Wp_ESD(hod self, double arg2, int arg3, int arg4, double [] arg5, double [] arg6, double [] arg7, </dt>
-<dd>double [] arg8, int arg9, double arg10, bool reset=True) -&gt; double</dd>
-<dt>Wp_ESD(hod self, double arg2, int arg3, int arg4, double [] arg5, double [] arg6, double [] arg7, </dt>
-<dd>double [] arg8, int arg9, double arg10) -&gt; double</dd>
+<dt>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, </dt>
+<dd>int esdbins2, double pimax, bool reset=True) -&gt; double</dd>
+<dt>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, </dt>
+<dd>int esdbins2, double pimax) -&gt; double</dd>
 </dl>
 </dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.Wp_Kaiser">
-<code class="descname">Wp_Kaiser</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>int arg3</em>, <em>double [] arg4</em>, <em>double [] arg5</em>, <em>double arg6</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp_Kaiser" title="Permalink to this definition">¶</a></dt>
-<dd><p>Wp_Kaiser(hod self, double arg2, int arg3, double [] arg4, double [] arg5, double arg6) -&gt; double</p>
+<code class="descname">Wp_Kaiser</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int wpbins</em>, <em>double [] rp</em>, <em>double [] wp</em>, <em>double pimax</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp_Kaiser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wp_Kaiser(hod self, double z, int wpbins, double [] rp, double [] wp, double pimax) -&gt; double</p>
 </dd></dl>
 
 <dl class="method">
@@ -1227,17 +2359,35 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">cosmo</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hodpars</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Om0</span><span class="o">=</span><span class="mf">0.3</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</td>
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
 </tr>
 </tbody>
 </table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">cosmo</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hodpars</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">Om0</span> <span class="o">=</span> <span class="mf">0.307115</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">w0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">wa</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">Omk</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">hval</span> <span class="o">=</span> <span class="mf">0.6777</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">Omb</span> <span class="o">=</span> <span class="mf">0.048206</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">th</span> <span class="o">=</span> <span class="mf">2.726</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">s8</span> <span class="o">=</span> <span class="mf">0.8228</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">nspec</span> <span class="o">=</span> <span class="mf">0.96</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">ximax</span> <span class="o">=</span> <span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">p</span><span class="o">.</span><span class="n">cfac</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">Mmin</span> <span class="o">=</span> <span class="mf">13.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">siglogM</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">Msat</span> <span class="o">=</span> <span class="mf">14.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">alpsat</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">Mcut</span> <span class="o">=</span> <span class="mf">13.5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">csbycdm</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">q</span><span class="o">.</span><span class="n">fac</span> <span class="o">=</span> <span class="mf">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">q</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -1248,33 +2398,162 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 
 <dl class="method">
 <dt id="hod.hod.avmass_cen">
-<code class="descname">avmass_cen</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.avmass_cen" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">avmass_cen</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.avmass_cen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average halo mass of central galaxies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average halo mass of central galaxies at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_cen</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.avmass_tot">
-<code class="descname">avmass_tot</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.avmass_tot" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">avmass_tot</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.avmass_tot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average halo mass of all galaxies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average halo mass of all galaxies at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_tot</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.galaxy_bias">
-<code class="descname">galaxy_bias</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.galaxy_bias" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">galaxy_bias</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.galaxy_bias" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average halo bias of all galaxies at redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average halo bias of all galaxies at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">galaxy_bias</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.getOmb">
 <code class="descname">getOmb</code><span class="sig-paren">(</span><em>hod self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.getOmb" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of Omegab</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>Omegab : Baryon density parameter</div></blockquote>
-<p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getOmb</span><span class="p">()</span>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Omegab : Baryon density parameter</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getOmb</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1282,22 +2561,77 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 <dl class="method">
 <dt id="hod.hod.getOmk">
 <code class="descname">getOmk</code><span class="sig-paren">(</span><em>hod self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.getOmk" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Output value of curvature parameter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Omk : Curvature parameter</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getOmk</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.geth">
 <code class="descname">geth</code><span class="sig-paren">(</span><em>hod self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.geth" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of h value</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No input parameters</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>h : Hubble parameter</div></blockquote>
-<p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">geth</span><span class="p">()</span>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No input parameters</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>h : Hubble parameter</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">geth</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1306,16 +2640,37 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 <dt id="hod.hod.gets8">
 <code class="descname">gets8</code><span class="sig-paren">(</span><em>hod self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.gets8" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of sigma8</p>
-<p>Parameters:</p>
-<blockquote>
-<div>None : No inputs</div></blockquote>
-<p>Returns:</p>
-<blockquote>
-<div>sigma8 : sigma8</div></blockquote>
-<p>Examples:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">gets8</span><span class="p">()</span>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No inputs</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>sigma8 : sigma8</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">gets8</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -1332,23 +2687,167 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 
 <dl class="method">
 <dt id="hod.hod.ncen">
-<code class="descname">ncen</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ncen" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">ncen</code><span class="sig-paren">(</span><em>hod self</em>, <em>double logM</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ncen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average number of central galaxies in halo of mass M</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>log M200: logarithm of the mass of the halo</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average number of central galaxies in the halo</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ncen</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.ncenz">
-<code class="descname">ncenz</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ncenz" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">ncenz</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.ncenz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average number density of central galaxies at redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average number density of central galaxies at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ncenz</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.nsat">
-<code class="descname">nsat</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.nsat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">nsat</code><span class="sig-paren">(</span><em>hod self</em>, <em>double logM</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.nsat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average number of satellite galaxies in halo of mass M</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>log M200: logarithm of the mass of the halo</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average number of satellite galaxies in the halo</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nsat</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.nsatz">
-<code class="descname">nsatz</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.nsatz" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">nsatz</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.nsatz" title="Permalink to this definition">¶</a></dt>
+<dd><p>Average number density of satellite galaxies at redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Average number density of satellite galaxies at redshift z</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nsatz</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.pspec_halomodel">
@@ -1372,8 +2871,42 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 
 <dl class="method">
 <dt id="hod.hod.set_cfactor">
-<code class="descname">set_cfactor</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.set_cfactor" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">set_cfactor</code><span class="sig-paren">(</span><em>hod self</em>, <em>double cfac</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.set_cfactor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set multiplicative constant to multiply all dark matter concentrations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>cfac : multiplicative constant</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>None : No return value</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">set_cfactor</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.set_inc_params">
@@ -1393,13 +2926,83 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 
 <dl class="method">
 <dt id="hod.hod.xigd_num">
-<code class="descname">xigd_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.xigd_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">xigd_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double r</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.xigd_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Galaxy-matter correlation function at distance radius and redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xi_gd(r,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xigd_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="method">
 <dt id="hod.hod.xigg_num">
-<code class="descname">xigg_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double arg2</em>, <em>double arg3</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.xigg_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="descname">xigg_num</code><span class="sig-paren">(</span><em>hod self</em>, <em>double r</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.xigg_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Galaxy-galaxy correlation function at distance radius and redshift z</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>r: Wavenumber (in h Mpc^{-1})</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>xi_gg(r,z)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">xigg_num</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </dd></dl>
 
