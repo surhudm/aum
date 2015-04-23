@@ -1213,6 +1213,11 @@ Run the following commands from inside the aum directory</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cosmology.cosmology.getmstar">
+<code class="descname">getmstar</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getmstar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
 <dt id="cosmology.cosmology.getns">
 <code class="descname">getns</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getns" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output value of spectral index</p>
@@ -2585,7 +2590,8 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </tbody>
 </table>
 <ul class="simple">
-<li>Average halo mass of central galaxies at redshift z</li>
+<li>Average halo mass of central galaxies at redshift z, normalized by 1e12 hinv
+Msun</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2597,7 +2603,7 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_cen</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_cen</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2626,7 +2632,8 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </tbody>
 </table>
 <ul class="simple">
-<li>Average halo mass of all galaxies at redshift z</li>
+<li>Average halo mass of all galaxies at redshift z, normalized by 1e12 hinv
+Msun</li>
 </ul>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -2638,7 +2645,7 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_tot</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">avmass_tot</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2679,7 +2686,7 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">galaxy_bias</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">galaxy_bias</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -2927,7 +2934,7 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ncenz</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">ncenz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -3009,7 +3016,7 @@ csbycdm : Multiplicative factor for satellite concentrations</p>
 </table>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">hod</span> <span class="kn">as</span> <span class="nn">h</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">h</span><span class="o">.</span><span class="n">hod</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nsatz</span><span class="p">(</span><span class="mf">12.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nsatz</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
