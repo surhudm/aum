@@ -129,7 +129,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 >>> import hod as h
 >>> a = h.hod()
->>> a.nsatz(12.0)
+>>> a.nsatz(0.5)
 
 "
 
@@ -149,7 +149,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 >>> import hod as h
 >>> a = h.hod()
->>> a.ncenz(12.0)
+>>> a.ncenz(0.5)
 
 "
 
@@ -162,14 +162,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Returns:
 
--   Average halo mass of all galaxies at redshift z
+-   Average halo mass of all galaxies at redshift z, normalized by 1e12 hinv
+    Msun
 
 
 :Examples:
 
 >>> import hod as h
 >>> a = h.hod()
->>> a.avmass_tot(12.0)
+>>> a.avmass_tot(0.5)
 
 "
 
@@ -182,14 +183,15 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 :Returns:
 
--   Average halo mass of central galaxies at redshift z
+-   Average halo mass of central galaxies at redshift z, normalized by 1e12 hinv
+    Msun
 
 
 :Examples:
 
 >>> import hod as h
 >>> a = h.hod()
->>> a.avmass_cen(12.0)
+>>> a.avmass_cen(0.5)
 
 "
 
@@ -209,7 +211,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 >>> import hod as h
 >>> a = h.hod()
->>> a.galaxy_bias(12.0)
+>>> a.galaxy_bias(0.5)
 
 "
 
