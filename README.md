@@ -31,11 +31,16 @@ modules are also copied correctly.
 If all goes well, you should have a working python library in the subdirectory
 install/lib/python2.7/...
 
+Note the path that is output by the following command:
+```bash
+echo `pwd`/`find install -iname site-packages`
+```
+
 To test the installation, run:
 
 ```python
 import sys
-sys.path.append('PATH_TO_COSMOLOGY.PY')
+sys.path.append('PATH_OUTPUT_BY_PREVIOUS_COMMAND')
 import cosmology as cc
 
 # This is the default constructor with some basic cosmological parameters
