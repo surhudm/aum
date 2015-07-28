@@ -376,7 +376,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 -   z: Redshift
 -   wpbins: Number of radial bins for the projected correlation function (wp)
 -   esdbins: Number of radial bins for the excess surface density (ESD)
--   rp: A c-array of projected radii for wp
+-   rp: A c-array of projected radii for wp (see below for c-array)
 -   esdrp: A c-array of projected radii for ESD
 -   wp: A c-array to store results for wp
 -   esd: A c-array to store results for ESD
@@ -394,6 +394,26 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 >>> a.Wp_ESD(0.1, 12, 12, rp, esdrp, wp, esd, 16, 100.0)
 
+To get a c-array from a numpy array. Use the following python function:
+
+:Examples:
+
+>>> def getdblarr(r):
+>>>     temp=h.doubleArray(r.size)
+>>>     for i in range(r.size):
+>>>         temp[i]=r[i]
+>>>     return temp
+
+
+Get a numpy-array from a c-array. Use the following python function:
+
+:Examples:
+
+>>> def getnparr(r,n):
+>>>     temp=np.zeros(n)
+>>>     for i in range(n):
+>>>         temp[i]=r[i]
+>>>     return temp
 "
 
 %feature("docstring") hod::Wp
@@ -403,7 +423,7 @@ Without any inputs, initializes to flat WMAP3 LCDM cosmology, cfac=1.0, ximax=lo
 
 -   z: Redshift
 -   wpbins: Number of radial bins for the projected correlation function (wp)
--   rp: A c-array of projected radii for wp
+-   rp: A c-array of projected radii for wp (see hod::Wp_ESD for c-array)
 -   wp: A c-array to store results for wp
 -   pimax: The line of sight integration length
 -   reset: (optional) reset halo exclusion related calculations, default=1
@@ -427,7 +447,7 @@ space distortions
 
 -   z: Redshift
 -   wpbins: Number of radial bins for the projected correlation function (wp)
--   rp: A c-array of projected radii for wp
+-   rp: A c-array of projected radii for wp (see hod::Wp_ESD for c-array)
 -   wp: A c-array to store results for wp
 -   pimax: The line of sight integration length
 -   reset: (optional) reset halo exclusion related calculations, default=1
@@ -449,7 +469,7 @@ space distortions
 
 -   z: Redshift
 -   esdbins: Number of radial bins for the excess surface density (ESD)
--   esdrp: A c-array of projected radii for ESD
+-   esdrp: A c-array of projected radii for ESD (see hod::Wp_ESD for c-array)
 -   esd: A c-array to store results for ESD
 -   esdbins2: Number of radial bins for the surface density calculation
     (>esdbins+4 typically)
@@ -474,7 +494,7 @@ space distortions
 
 -   z: Redshift
 -   rbins: Number of radial bins 
--   rp: A c-array of 3-d radii
+-   rp: A c-array of 3-d radii (see hod::Wp_ESD for c-array)
 -   bias: A c-array to store results for scale dependent bias
 -   crossr: A c-array to store results for cross-correlation coefficient
 -   reset: (optional) reset halo exclusion related calculations, default=1
