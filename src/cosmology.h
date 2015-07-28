@@ -322,7 +322,7 @@ class cosmology
     double bias_TI10(double, double);    // Tinker et al. 2010 bias
     
     double getzcoll(double);            // Redshift of collapse for a halo of mass M
-    double getmstar();                  // M* defined such that sigma(M*)=1.686
+    // double getmstar();                  // M* defined such that sigma(M*)=1.686
     double getMvir(double, double);     // Get Mvir from M200 and redshift
     double getc200(double, double);     // Get c200
     double c_MAC(double,double);        // Concentration a'la Maccio 
@@ -510,6 +510,8 @@ class cosmology
     double get_deltapi(double z1,double z2);
     double get_sinsqang(double x1,double y1,double z1,double x2,double y2,double z2);
     double get_logrp(double x1,double y1,double z1,double x2,double y2,double z2, double Chisq);
+    //
+    double getmstar();                  // M* defined such that sigma(M*)=1.686
 
 };
 
