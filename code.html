@@ -2278,7 +2278,7 @@ with the bias prescription</li>
 <ul class="simple">
 <li>z: Redshift</li>
 <li>esdbins: Number of radial bins for the excess surface density (ESD)</li>
-<li>esdrp: A c-array of projected radii for ESD</li>
+<li>esdrp: A c-array of projected radii for ESD (see hod::Wp_ESD for c-array)</li>
 <li>esd: A c-array to store results for ESD</li>
 <li>esdbins2: Number of radial bins for the surface density calculation
 (&gt;esdbins+4 typically)</li>
@@ -2339,7 +2339,7 @@ Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; doub
 <ul class="simple">
 <li>z: Redshift</li>
 <li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
-<li>rp: A c-array of projected radii for wp</li>
+<li>rp: A c-array of projected radii for wp (see hod::Wp_ESD for c-array)</li>
 <li>wp: A c-array to store results for wp</li>
 <li>pimax: The line of sight integration length</li>
 <li>reset: (optional) reset halo exclusion related calculations, default=1</li>
@@ -2390,7 +2390,7 @@ Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; doub
 <li>z: Redshift</li>
 <li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
 <li>esdbins: Number of radial bins for the excess surface density (ESD)</li>
-<li>rp: A c-array of projected radii for wp</li>
+<li>rp: A c-array of projected radii for wp (see below for c-array)</li>
 <li>esdrp: A c-array of projected radii for ESD</li>
 <li>wp: A c-array to store results for wp</li>
 <li>esd: A c-array to store results for ESD</li>
@@ -2422,6 +2422,38 @@ array</li>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">Wp_ESD</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="n">rp</span><span class="p">,</span> <span class="n">esdrp</span><span class="p">,</span> <span class="n">wp</span><span class="p">,</span> <span class="n">esd</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mf">100.0</span><span class="p">)</span>
 </pre></div>
 </div>
+<p>To get a c-array from a numpy array. Use the following python function:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">getdblarr</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">temp</span><span class="o">=</span><span class="n">h</span><span class="o">.</span><span class="n">doubleArray</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">size</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">temp</span>
+</pre></div>
+</div>
+<p>Get a numpy-array from a c-array. Use the following python function:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">getnparr</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="n">temp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="n">temp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">r</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">return</span> <span class="n">temp</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="method">
@@ -2441,7 +2473,7 @@ space distortions</p>
 <ul class="simple">
 <li>z: Redshift</li>
 <li>wpbins: Number of radial bins for the projected correlation function (wp)</li>
-<li>rp: A c-array of projected radii for wp</li>
+<li>rp: A c-array of projected radii for wp (see hod::Wp_ESD for c-array)</li>
 <li>wp: A c-array to store results for wp</li>
 <li>pimax: The line of sight integration length</li>
 <li>reset: (optional) reset halo exclusion related calculations, default=1</li>
@@ -3081,7 +3113,7 @@ calculations</p>
 <ul class="simple">
 <li>z: Redshift</li>
 <li>rbins: Number of radial bins</li>
-<li>rp: A c-array of 3-d radii</li>
+<li>rp: A c-array of 3-d radii (see hod::Wp_ESD for c-array)</li>
 <li>bias: A c-array to store results for scale dependent bias</li>
 <li>crossr: A c-array to store results for cross-correlation coefficient</li>
 <li>reset: (optional) reset halo exclusion related calculations, default=1</li>
