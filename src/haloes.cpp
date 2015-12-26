@@ -634,33 +634,37 @@ void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir
 /// Get comoving virial radius from virial mass
 double cosmology::getRvirfromMvir(double Mvir, double z){
 
-    double Rvir=0.169*pow(Mvir/1.e12,1./3.);
-    Rvir*=pow(Delta_crit(z)/178.0,-1.0/3.0);
-    Rvir*=pow(Eofz(z),-2./3.);
+    double Rvir=pow(Mvir/(Delta_crit(z)*1.E4*pow(Eofz(z),2.)/2./gee), 1./3.);
     Rvir=Rvir*(1.+z);
 
     return Rvir;
+}
+
+/// Get comoving virial radius from virial mass
+double cosmology::getRDelfromMDel(double MDel, double z, double Del){
+
+    double RDel=pow(facmtor*MDel/Del, 1./3.);
+    return RDel;
 }
 
 /// Radii are in comoving units here
 void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir, double &cvir, double &R200, double &c200)
 {
     Mvir=getMvir(m200,z);
-    Rvir=0.169*pow(Mvir/1.e12,1./3.);
-    Rvir*=pow(Delta_crit(z)/178.0,-1.0/3.0);
-    Rvir*=pow(Eofz(z),-2./3.);
-
+    Rvir=getRvirfromMvir(Mvir, z);
+    
     double Delta=200.;
+    R200=getRDelfromMDel(m200, z, Delta);
+
+    /*
     R200=pow( 1.0e12/(4./3.*Delta*3e4*0.3/(8*gee)),1./3.);
     R200*=pow(m200/1.e12,1./3.);
     R200*=pow(Omega(z)/0.3,-1.0/3.0);
     R200*=pow(Eofz(z),-2./3.);
+    */
 
     cvir=conc(Mvir,z);
-
     c200=getc200(cvir,z);
-    R200=R200*(1.+z);
-    Rvir=Rvir*(1.+z);
 
 }
 
@@ -668,16 +672,10 @@ void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir
 void cosmology::modelNFWhalo(double m200,double z,double &Mvir, double &Rvir, double &cvir, double &R200, double &c200)
 {
     Mvir=getMvir(m200,z);
-
-    Rvir=0.169*pow(Mvir/1.e12,1./3.);
-    Rvir*=pow(Delta_crit(z)/178.0,-1.0/3.0);
-    Rvir*=pow(Eofz(z),-2./3.);
+    Rvir=getRvirfromMvir(Mvir, z)/(1.+z);
 
     double Delta=200.;
-    R200=pow( 1.0e12/(4./3.*Delta*3e4*0.3/(8*gee)),1./3.);
-    R200*=pow(m200/1.e12,1./3.);
-    R200*=pow(Omega(z)/0.3,-1.0/3.0);
-    R200*=pow(Eofz(z),-2./3.);
+    R200=getRDelfromMDel(m200, z, Delta)/(1.+z);
 
     cvir=conc(Mvir,z);
 

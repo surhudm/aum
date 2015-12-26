@@ -488,7 +488,7 @@ void cosmology::init_growthfactor()
         }
         //Define the limits for which to calculate the variance
         double zmin=0.0;
-        double zmax=3.0;
+        double zmax=10.0;
 
         /// Integrator
         const gsl_odeiv_step_type * T = gsl_odeiv_step_rk8pd;

@@ -538,6 +538,7 @@ class cosmology
     void pevolve_fixed(double cdel,int opt,double z,double zstart,double&cdelz ,double&fdelz);
     double getcDel(double cvir, double z, double Delta);
     double getRvirfromMvir(double Mvir, double z);
+    double getRDelfromMDel(double Mdel, double z, double Del);
 
 };
 
