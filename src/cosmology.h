@@ -537,6 +537,7 @@ class cosmology
     double getmstar();                  // M* defined such that sigma(M*)=1.686
     void pevolve_fixed(double cdel,int opt,double z,double zstart,double&cdelz ,double&fdelz);
     double getcDel(double cvir, double z, double Delta);
+    double getRvirfromMvir(double Mvir, double z);
 
 };
 

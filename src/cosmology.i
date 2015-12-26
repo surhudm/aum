@@ -1008,6 +1008,25 @@ the ratio of its mass to the mass at redshift zstart.
     [5.019071157921484, 0.585350923353302]
 "
 
+%feature("docstring") cosmology::getRvirfromMvir
+"Compute the comoving virial radius from the virial mass
+
+:Parameters:
+
+-   Mvir : Virial mass
+-   z: Redshift
+
+:Returns:
+
+-   Rvir : The comoving virial radius
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.getRvirfromMvir(1.E12, 0.0)
+"
+
 %feature("docstring") cosmology::getcDel
 "Output the concentration, cDelta, of a halo defined as Delta
 with respect to the background density at redshift z and which

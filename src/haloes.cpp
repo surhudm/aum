@@ -631,11 +631,21 @@ void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir
 }
 */
 
+/// Get comoving virial radius from virial mass
+double cosmology::getRvirfromMvir(double Mvir, double z){
+
+    double Rvir=0.169*pow(Mvir/1.e12,1./3.);
+    Rvir*=pow(Delta_crit(z)/178.0,-1.0/3.0);
+    Rvir*=pow(Eofz(z),-2./3.);
+    Rvir=Rvir*(1.+z);
+
+    return Rvir;
+}
+
 /// Radii are in comoving units here
 void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir, double &cvir, double &R200, double &c200)
 {
     Mvir=getMvir(m200,z);
-
     Rvir=0.169*pow(Mvir/1.e12,1./3.);
     Rvir*=pow(Delta_crit(z)/178.0,-1.0/3.0);
     Rvir*=pow(Eofz(z),-2./3.);
@@ -649,9 +659,8 @@ void cosmology::modelNFWhalo_com(double m200,double z,double &Mvir, double &Rvir
     cvir=conc(Mvir,z);
 
     c200=getc200(cvir,z);
-
-    Rvir=Rvir*(1.+z);
     R200=R200*(1.+z);
+    Rvir=Rvir*(1.+z);
 
 }
 
