@@ -1027,6 +1027,26 @@ the ratio of its mass to the mass at redshift zstart.
     >>> a.getRvirfromMvir(1.E12, 0.0)
 "
 
+%feature("docstring") cosmology::getRDelfromMDel
+"Compute the comoving halo radius from the halo mass with overdensity Delta
+
+:Parameters:
+
+-   MDel : Halo mass
+-   z: Redshift
+-   Del: Overdensity
+
+:Returns:
+
+-   RDel : The comoving halo boundary
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.getRDelfromMDel(1.E12, 0.0, 200.0)
+"
+
 %feature("docstring") cosmology::getcDel
 "Output the concentration, cDelta, of a halo defined as Delta
 with respect to the background density at redshift z and which
