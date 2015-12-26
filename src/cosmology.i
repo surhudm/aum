@@ -608,7 +608,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.Eofz(0.5)
     1.28111279753
 "
@@ -627,7 +627,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.setnew_z(0.5)
     1
 "
@@ -647,7 +647,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.gets8()
 "
 
@@ -665,7 +665,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.getOmb()
 "
 
@@ -683,7 +683,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.geth()
 "
 
@@ -702,7 +702,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.getns()
 "
 
@@ -720,7 +720,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.getxinlzetamax()
 "
 
@@ -738,7 +738,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.get_cfac()
 "
 
@@ -756,7 +756,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.set_cfac(1.0)
 "
 
@@ -774,7 +774,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.getzmax(1e12)
 "
 
@@ -793,7 +793,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.getLmin(0.1)
 "
 
@@ -812,7 +812,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.Time(0.1)
 "
 
@@ -831,7 +831,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.Lookback(0.1)
 "
 
@@ -852,7 +852,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.wpnl(0.1,0.1,100.0)
 "
 
@@ -872,7 +872,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.wpl(0.1,0.1,100.0)
 "
 
@@ -894,7 +894,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.wpnl_kaiser(0.1,0.1,100.0,1.0)
 "
 
@@ -915,7 +915,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.wpl_kaiser(0.1,0.1,100.0,1.0)
 "
 
@@ -937,7 +937,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.xi_nl_kaiser(0.1,0.1,0.5,1.0)
 "
 
@@ -958,7 +958,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.xi_L_kaiser(0.1,0.1,0.5,1.0)
 "
 
@@ -976,7 +976,7 @@ given a mass M200m at redshift z
 :Examples:
 
 >>> import cosmology as cc
->>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+>>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
 >>> a.rsound()
 "
 
@@ -1003,9 +1003,31 @@ the ratio of its mass to the mass at redshift zstart.
 :Examples:
 
     >>> import cosmology as cc
-    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
     >>> a.pevolve_fixed(12.0,1,1.0,0.0)
     [5.019071157921484, 0.585350923353302]
 "
 
+%feature("docstring") cosmology::getcDel
+"Output the concentration, cDelta, of a halo defined as Delta
+with respect to the background density at redshift z and which
+has virial concentration equal to cvir.
+
+:Parameters:
+
+-   cvir : The virial concentration
+-   z : Redshift
+-   Del : The overdensity with respect to the background
+
+:Returns:
+
+-   cDelta : The concentration of this halo when defined as Del times overdense with respect to the background
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.getcDel(10.0,0.0,200.)
+    12.6784160959
+"
 %include "cosmology.h"
