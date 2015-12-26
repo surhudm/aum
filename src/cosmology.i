@@ -978,4 +978,32 @@ given a mass M200m at redshift z
 >>> a.rsound()
 "
 
+%feature("docstring") cosmology::pevolve_fixed
+"Pseudo-evolution estimate for the mass (backward or forward):
+Assume that the physical density profile of a peak with
+concentration cdel at redshift zstart defined to be of type
+opt 
+remains fixed. Calculate its concentration at redshift z, and
+the ratio of its mass to the mass at redshift zstart.
+
+:Parameters:
+
+-   cdel : concentration of halo 
+-   opt : opt=1: Defined with respect to background density, opt=2: Defined to be virial mass, opt=3: Defined with respect to critical density
+-   z: Redshift
+-   zstart : The reference redshift at which the halo density profile is fixed
+
+:Returns:
+
+-   cdelz : The concentration of the halo at redshift z
+-   fdelz : The ratio of the mass at redshift z to the mass at redshift zstart
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27, 0.73, 0.047, 0.7, 2.726, 0.82, 0.95)
+    >>> a.pevolve_fixed(12.0,1,1.0,0.0)
+    [5.019071157921484, 0.585350923353302]
+"
+
 %include "cosmology.h"

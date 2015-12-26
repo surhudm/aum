@@ -25,6 +25,12 @@ struct gf_par{
     double Omega0,OmegaL,w0,wa;
 };
 
+/// march_params object
+struct march_params
+{
+    double fac;
+};
+
 class cosmology;
 
 struct qk_params
@@ -77,6 +83,7 @@ double dwpnl_kaiser(double, void*);
 double dwpl_kaiser(double, void*);
 double dvar_G(double x, void * params);
 double dvar_TH(double x, void * params);
+double findcmarch(double, void*);
 
 class cosmology
 {
@@ -129,11 +136,13 @@ class cosmology
 
 #ifndef SWIG
     const static int Nsigma=100;
+    const static int Ngf=1000;
     const static int Npower=1000;
     const static int Nxi=1000;
     const static int Nxibar=1000;
 #else
     const int Nsigma=100;
+    const int Ngf=1000;
     const int Npower=1000;
     const int Nxi=1000;
     const int Nxibar=1000;
@@ -326,6 +335,7 @@ class cosmology
     double getMvir(double, double);     // Get Mvir from M200 and redshift
     double getc200(double, double);     // Get c200
     double c_MAC(double,double);        // Concentration a'la Maccio 
+    double munfw(double);              // Function related to mass enclosed for NFW 
 
     void setrzeta(double);
     double findrzfn(double x, double tgt, double z);
@@ -413,6 +423,7 @@ class cosmology
     friend double dwpl_kaiser(double, void*);
     friend double dvar_G(double x, void * params);
     friend double dvar_TH(double x, void * params);
+    friend double findcmarch(double, void*);
 
     public:
     
@@ -512,6 +523,7 @@ class cosmology
     double get_logrp(double x1,double y1,double z1,double x2,double y2,double z2, double Chisq);
     //
     double getmstar();                  // M* defined such that sigma(M*)=1.686
+    void pevolve_fixed(double cdel,int opt,double z,double zstart,double&,double&);
 
 };
 

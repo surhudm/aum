@@ -915,3 +915,85 @@ double cosmology::uskofm(double k, double m, double z, double csbycdm)
     return res1/fac;
 
 }
+
+double cosmology::munfw(double x){
+    return log(1.+x)-x/(1.+x);
+}
+
+
+/// The root of this function gives the concentration for a halo
+/// evolving in isolation
+double findcmarch(double cdelz, void *params)
+{
+    march_params c1 = *(march_params *) params;
+    double fac;
+    fac=c1.fac;
+
+    double mucdelz = log(1.+cdelz)-cdelz/(1.+cdelz);
+    double res= fac - pow(cdelz,3)/mucdelz;
+    //std::cerr<<cdelz<<" "<<res<<std::endl;
+    return res;
+
+}
+
+void cosmology::pevolve_fixed(double cdel, int opt, double z, double zstart, double
+&cdelz, double &fdelz){
+
+    double fac;
+    if(opt==1){
+        fac=pow(cdel*(1.+zstart)/(1.+z),3)/munfw(cdel);
+    }else if(opt==2){
+        fac=pow(cdel,3)/munfw(cdel);
+        fac=fac*pow(Eofz(zstart)/Eofz(z),2);
+        fac=fac*Delta_crit(zstart)/Delta_crit(z);
+    }else if(opt==3){
+        fac=pow(cdel,3)/munfw(cdel);
+        fac=fac*pow(Eofz(zstart)/Eofz(z),2);
+    }else{
+        fprintf(stderr,"Option %d not supported yet, bailing out...",opt);
+        exit(100);
+    }
+
+    int status;
+    int iter = 0, max_iter = 100;
+    double res;
+
+    const gsl_root_fsolver_type *T;
+    gsl_root_fsolver *s;
+
+    double c_lo = 0.01*cdel, c_hi = 100000.0*cdel;
+
+    gsl_function F;
+    march_params p;
+    p.fac = fac;
+
+    F.function = &findcmarch;
+    F.params = &p;
+   
+    T = gsl_root_fsolver_brent;
+    s = gsl_root_fsolver_alloc (T);
+    gsl_root_fsolver_set (s, &F, c_lo, c_hi);
+
+    do
+    {
+        iter++;
+        status = gsl_root_fsolver_iterate (s);
+        res = gsl_root_fsolver_root (s);
+        c_lo = gsl_root_fsolver_x_lower (s);
+        c_hi = gsl_root_fsolver_x_upper (s);
+        status = gsl_root_test_interval (c_lo, c_hi,0, 1e-6);
+
+        if (status == GSL_SUCCESS)
+        {
+            //std::cout<<"# "<<"zcollapse:Brent converged after "<< iter<<" iterations"<<std::endl;
+        }
+
+
+    }while (status == GSL_CONTINUE && iter < max_iter);
+
+    gsl_root_fsolver_free (s);
+
+    cdelz=res;
+    fdelz=munfw(cdelz)/munfw(cdel);
+
+}

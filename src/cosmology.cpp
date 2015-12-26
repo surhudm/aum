@@ -187,6 +187,32 @@ double dTime(double x, void * params)
 /// Lookback time in units of 1/H0
 double cosmology::Lookback(double z)
 {
+        /*
+    /// Int_{(1+z)^{-1}}^{1} 1/E(a) da/a
+    gsl_integration_workspace * w = gsl_integration_workspace_alloc (1000);
+    double result, error;
+
+    gsl_function F;
+    F.function = &(dTime);
+
+    //Initialize parameter block for dlookback
+    c_params p;
+    p.cptr = this;
+
+    F.params = &p;
+
+    gsl_error_handler_t *oldhand=gsl_set_error_handler_off();
+    gsl_integration_qags (&F, 1./(1.+z), 1., 0, 1e-6, 1000, w, &result, &error); 
+    gsl_set_error_handler(oldhand);
+
+    //printf ("result          = % .18f\n", result);
+    //printf ("estimated error = % .18f\n", error);
+    //printf ("intervals =  %d\n", w->size);
+
+    gsl_integration_workspace_free (w);
+
+    return result;
+    */
     return t0-Time(z);
 }
 
@@ -462,7 +488,7 @@ void cosmology::init_growthfactor()
         }
         //Define the limits for which to calculate the variance
         double zmin=0.0;
-        double zmax=10.0;
+        double zmax=3.0;
 
         /// Integrator
         const gsl_odeiv_step_type * T = gsl_odeiv_step_rk8pd;
@@ -487,10 +513,10 @@ void cosmology::init_growthfactor()
         // Initialise!
         double y[2] = { 1.0, -1./1089. };
 
-        double xx[Nsigma],yy[Nsigma];
-        for (int i=Nsigma-1;i>=0;i--)
+        double xx[Ngf],yy[Ngf];
+        for (int i=Ngf-1;i>=0;i--)
         {
-            double zz=zmin+i/(Nsigma-1.)*(zmax-zmin);
+            double zz=zmin+i/(Ngf-1.)*(zmax-zmin);
             xx[i]=zz;
 
             while (z > xx[i])
@@ -517,7 +543,7 @@ void cosmology::init_growthfactor()
         gsl_odeiv_step_free (s);
 
         /// Normalise back to growth factor at redshift 0
-        for (int i=Nsigma-1;i>=0;i--)
+        for (int i=Ngf-1;i>=0;i--)
         {
             yy[i]=yy[i]/yy[0];
         }
@@ -525,14 +551,14 @@ void cosmology::init_growthfactor()
         /// So continue old style from here on!
 
         GF_acc = gsl_interp_accel_alloc ();
-        GF_spline = gsl_spline_alloc (gsl_interp_cspline, Nsigma);
-        gsl_spline_init (GF_spline,xx,yy,Nsigma);
+        GF_spline = gsl_spline_alloc (gsl_interp_cspline, Ngf);
+        gsl_spline_init (GF_spline,xx,yy,Ngf);
 
         bool_init_GF=true;
 
         /// Output for checking
         /*
-           for (int i=0;i<Nsigma;i++)
+           for (int i=0;i<Ngf;i++)
            {
            std::cout<<xx[i]<<" "<<yy[i]<<std::endl;
            }
