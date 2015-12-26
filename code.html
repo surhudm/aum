@@ -1004,6 +1004,53 @@ __init__(cosmology self, cosmo arg2) -&gt; cosmology</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="cosmology.cosmology.getRDelfromMDel">
+<code class="descname">getRDelfromMDel</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double Mdel</em>, <em>double z</em>, <em>double Del</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getRDelfromMDel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="cosmology.cosmology.getRvirfromMvir">
+<code class="descname">getRvirfromMvir</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double Mvir</em>, <em>double z</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.getRvirfromMvir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the comoving virial radius from the virial mass</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Mvir : Virial mass</li>
+<li>z: Redshift</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>Rvir : The comoving virial radius</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0476</span><span class="p">,</span><span class="mf">0.7</span><span class="p">,</span><span class="mf">2.726</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.96</span><span class="p">,</span><span class="n">log10</span><span class="p">(</span><span class="mf">8.0</span><span class="p">),</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">getRvirfromMvir</span><span class="p">(</span><span class="mf">1.E12</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">)</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="cosmology.cosmology.get_cfac">
 <code class="descname">get_cfac</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#cosmology.cosmology.get_cfac" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns factor multiplying all concentrations calculated by the code</p>
