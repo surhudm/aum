@@ -5,6 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Code documentation &mdash; AUM 1.0rc documentation</title>
@@ -14,7 +15,6 @@
   
 
   
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
   
   
@@ -34,7 +34,7 @@
         <link rel="prev" title="Installation" href="install.html"/> 
 
   
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -46,8 +46,14 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-nav-search">
         
-          <a href="index.html" class="fa fa-home"> AUM</a>
+
         
+          <a href="index.html" class="icon icon-home"> AUM
+        
+
+        
+        </a>
+
         
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -56,6 +62,8 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
+
+        
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
@@ -97,7 +105,9 @@
     <li>Code documentation</li>
       <li class="wy-breadcrumbs-aside">
         
-          <a href="_sources/code.txt" rel="nofollow"> View page source</a>
+          
+            <a href="_sources/code.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
   </ul>
@@ -661,11 +671,8 @@ Run the following commands from inside the aum directory</p>
 <dl class="method">
 <dt id="cosmology.cosmology.__init__">
 <code class="descname">__init__</code><span class="sig-paren">(</span><em>cosmology self</em><span class="sig-paren">)</span> &rarr; cosmology<a class="headerlink" href="#cosmology.cosmology.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>__init__(cosmology self, double om0, double omk, double w0, double wa, double omb, double h, double theta, </dt>
-<dd>double sigma8, double ns, double ximax, double cfac) -&gt; cosmology</dd>
-</dl>
-<p>__init__(cosmology self, cosmo arg2) -&gt; cosmology</p>
+<dd><p>__init__(cosmology self, double om0, double omk, double w0, double wa, double omb, double h, double theta, double sigma8, double ns, double ximax, double cfac) -&gt; cosmology
+__init__(cosmology self, cosmo arg2) -&gt; cosmology</p>
 <p>Initializes cosmology object</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -1424,12 +1431,8 @@ Run the following commands from inside the aum directory</p>
 
 <dl class="method">
 <dt id="cosmology.cosmology.modelNFWhalo">
-<code class="descname">modelNFWhalo</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>modelNFWhalo(cosmology self, double M200, double z, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
-<dd>double &amp; arg8)</dd>
-</dl>
-<p>Output the virial mass, physical virial radius, virial
+<code class="descname">modelNFWhalo</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M200</em>, <em>double z</em>, <em>double &amp; arg4</em>, <em>double &amp; arg5</em>, <em>double &amp; arg6</em>, <em>double &amp; arg7</em>, <em>double &amp; arg8</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the virial mass, physical virial radius, virial
 concentration of a halo, its physical radius with density
 contrast 200m and the corresponding concentration c200m
 given a mass M200m at redshift z</p>
@@ -1477,12 +1480,8 @@ given a mass M200m at redshift z</p>
 
 <dl class="method">
 <dt id="cosmology.cosmology.modelNFWhalo_com">
-<code class="descname">modelNFWhalo_com</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo_com" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>modelNFWhalo_com(cosmology self, double M200, double z, double &amp; arg4, double &amp; arg5, double &amp; arg6, double &amp; arg7, </dt>
-<dd>double &amp; arg8)</dd>
-</dl>
-<p>Output the virial mass, comoving virial radius, virial
+<code class="descname">modelNFWhalo_com</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double M200</em>, <em>double z</em>, <em>double &amp; arg4</em>, <em>double &amp; arg5</em>, <em>double &amp; arg6</em>, <em>double &amp; arg7</em>, <em>double &amp; arg8</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.modelNFWhalo_com" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the virial mass, comoving virial radius, virial
 concentration of a halo, its comoving radius with density
 contrast 200m and the corresponding concentration c200m
 given a mass M200m at redshift z</p>
@@ -1568,6 +1567,57 @@ given a mass M200m at redshift z</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">nofm</span><span class="p">(</span><span class="mf">1e12</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="cosmology.cosmology.pevolve_fixed">
+<code class="descname">pevolve_fixed</code><span class="sig-paren">(</span><em>cosmology self</em>, <em>double cdel</em>, <em>int opt</em>, <em>double z</em>, <em>double zstart</em>, <em>double &amp; arg6</em>, <em>double &amp; arg7</em><span class="sig-paren">)</span><a class="headerlink" href="#cosmology.cosmology.pevolve_fixed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pseudo-evolution estimate for the mass (backward or forward):
+Assume that the physical density profile of a peak with
+concentration cdel at redshift zstart defined to be of type
+opt 
+remains fixed. Calculate its concentration at redshift z, and
+the ratio of its mass to the mass at redshift zstart.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>cdel : concentration of halo</li>
+<li>opt : opt=1: Defined with respect to background density, opt=2: Defined to be virial mass, opt=3: Defined with respect to critical density</li>
+<li>z: Redshift</li>
+<li>zstart : The reference redshift at which the halo density profile is fixed</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li>cdelz : The concentration of the halo at redshift z</li>
+<li>fdelz : The ratio of the mass at redshift z to the mass at redshift zstart</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Examples:</th><td class="field-body"><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">cosmology</span> <span class="kn">as</span> <span class="nn">cc</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">cc</span><span class="o">.</span><span class="n">cosmology</span><span class="p">(</span><span class="mf">0.27</span><span class="p">,</span> <span class="mf">0.73</span><span class="p">,</span> <span class="mf">0.047</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">,</span> <span class="mf">2.726</span><span class="p">,</span> <span class="mf">0.82</span><span class="p">,</span> <span class="mf">0.95</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">.</span><span class="n">pevolve_fixed</span><span class="p">(</span><span class="mf">12.0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
+<span class="go">[5.019071157921484, 0.585350923353302]</span>
+</pre></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 <dl class="method">
@@ -2311,14 +2361,9 @@ array</li>
 
 <dl class="method">
 <dt id="hod.hod.Sigma">
-<code class="descname">Sigma</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.Sigma" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0, </dt>
-<dd>double xfgm_slp=-99.0, double pimax=-80.0) -&gt; double</dd>
-<dt>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0, </dt>
-<dd>double xfgm_slp=-99.0) -&gt; double</dd>
-</dl>
-<p>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0) -&gt; double
+<code class="descname">Sigma</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int esdbins</em>, <em>double [] rp</em>, <em>double [] sigma</em>, <em>bool reset=True</em>, <em>double xfgm_m0=-99.0</em>, <em>double xfgm_slp=-99.0</em>, <em>double pimax=-80.0</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Sigma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0, double xfgm_slp=-99.0) -&gt; double
+Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True, double xfgm_m0=-99.0) -&gt; double
 Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma, bool reset=True) -&gt; double
 Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; double</p>
 </dd></dl>
@@ -2370,13 +2415,8 @@ Sigma(hod self, double z, int esdbins, double [] rp, double [] sigma) -&gt; doub
 
 <dl class="method">
 <dt id="hod.hod.Wp_ESD">
-<code class="descname">Wp_ESD</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#hod.hod.Wp_ESD" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, </dt>
-<dd>int esdbins2, double pimax, bool reset=True) -&gt; double</dd>
-<dt>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, </dt>
-<dd>int esdbins2, double pimax) -&gt; double</dd>
-</dl>
+<code class="descname">Wp_ESD</code><span class="sig-paren">(</span><em>hod self</em>, <em>double z</em>, <em>int wpbins</em>, <em>int esdbins</em>, <em>double [] rp</em>, <em>double [] esdrp</em>, <em>double [] wp</em>, <em>double [] esd</em>, <em>int esdbins2</em>, <em>double pimax</em>, <em>bool reset=True</em><span class="sig-paren">)</span> &rarr; double<a class="headerlink" href="#hod.hod.Wp_ESD" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wp_ESD(hod self, double z, int wpbins, int esdbins, double [] rp, double [] esdrp, double [] wp, double [] esd, int esdbins2, double pimax) -&gt; double</p>
 <p>Return projected galaxy correlation and ESD</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -3398,7 +3438,7 @@ calculations</p>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="install.html" class="btn btn-neutral" title="Installation"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="install.html" class="btn btn-neutral" title="Installation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -3410,10 +3450,10 @@ calculations</p>
         &copy; Copyright 2015, Surhud More.
     </p>
   </div>
-
   Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-  
+
 </footer>
+
         </div>
       </div>
 
