@@ -2,6 +2,8 @@
 %include cpointer.i
 %pointer_class(double,dp)
 %apply double& INOUT { double& a };
+%apply double &OUTPUT { double& cdelz, double& fdelz };
+%apply double &OUTPUT { double & Mvir, double& Rvir, double& cvir,double& R200,double& c200 };
 %feature("autodoc", 1);
 %{
     #define SWIG_FILE_WITH_INIT

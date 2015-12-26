@@ -997,3 +997,81 @@ void cosmology::pevolve_fixed(double cdel, int opt, double z, double zstart, dou
     fdelz=munfw(cdelz)/munfw(cdel);
 
 }
+
+/// The root of this function gives the cDel for a particular cvir
+double findcDel(double cDel, void *params)
+{
+    cDel_params c1 = *(cDel_params *) params;
+    cosmology *c2;
+    double *cvir;
+    double *omegaz;
+    double *dcz;
+    double *Delta;
+    c2=c1.cptr;
+    cvir=c1.cvir;
+    omegaz=c1.omegaz;
+    dcz=c1.dcz;
+    Delta=c1.Delta;
+
+    double fcvir=log(1.+*cvir) - *cvir/(1.+*cvir);
+    double fcDel=log(1.+cDel) - cDel/(1.+cDel);
+
+    double res= (*dcz)/(*Delta*(*omegaz))*pow((*cvir)/cDel,3.0) - fcvir/fcDel;
+    //printf("%lg %lg %lg %lg %lg \n",fcvir,fcDel,*cvir,cDel,res);
+    //fflush(stdout);
+    return res;
+
+}
+
+/// Get the cDel for a given cvir
+double cosmology::getcDel(double cvir, double z, double Delta)
+{
+    int status;
+    int iter = 0, max_iter = 100;
+    double res;
+
+    const gsl_root_fsolver_type *T;
+    gsl_root_fsolver *s;
+
+    double c_lo = 0.01*cvir, c_hi = 10.0*cvir;
+
+    gsl_function F;
+    cDel_params p;
+    p.cptr = this;
+    p.cvir = &cvir;
+    double omz=Omega(z);
+    double dcz=Delta_crit(z);
+    p.omegaz=&omz; 
+    p.dcz=&dcz;
+    p.Delta=&Delta;
+
+    F.function = &findcDel;
+    F.params = &p;
+   
+    T = gsl_root_fsolver_brent;
+    s = gsl_root_fsolver_alloc (T);
+    gsl_root_fsolver_set (s, &F, c_lo, c_hi);
+
+    do
+    {
+        iter++;
+        status = gsl_root_fsolver_iterate (s);
+        res = gsl_root_fsolver_root (s);
+        c_lo = gsl_root_fsolver_x_lower (s);
+        c_hi = gsl_root_fsolver_x_upper (s);
+        status = gsl_root_test_interval (c_lo, c_hi,0, 1e-6);
+
+        if (status == GSL_SUCCESS)
+        {
+            //std::cout<<"# "<<"zcollapse:Brent converged after "<< iter<<" iterations"<<std::endl;
+        }
+
+
+    }while (status == GSL_CONTINUE && iter < max_iter);
+
+    gsl_root_fsolver_free (s);
+
+    return res;
+
+}
+

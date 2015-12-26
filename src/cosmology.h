@@ -50,6 +50,16 @@ struct projwpk_params
     double *fkai;
 };
 
+/// Object to pass cosmology, cvir, Omega(z), Deltacrit(z)
+struct cDel_params
+{
+    cosmology *cptr;
+    double *cvir;
+    double *omegaz;
+    double *dcz;
+    double *Delta;
+};
+
 double dTime(double,void*);
 double dChi (double,void*);
 //double df3 (double,void*);
@@ -84,6 +94,7 @@ double dwpl_kaiser(double, void*);
 double dvar_G(double x, void * params);
 double dvar_TH(double x, void * params);
 double findcmarch(double, void*);
+double findcDel(double, void*);
 
 class cosmology
 {
@@ -424,6 +435,7 @@ class cosmology
     friend double dvar_G(double x, void * params);
     friend double dvar_TH(double x, void * params);
     friend double findcmarch(double, void*);
+    friend double findcDel(double, void*);
 
     public:
     
@@ -475,8 +487,8 @@ class cosmology
         double getM(double Nplus,double z);
 
         //NFW profile related functions
-        void modelNFWhalo(double M200,double z,double&,double&,double&,double&,double&); // Radii in physical units
-        void modelNFWhalo_com(double M200,double z,double&,double&,double&,double&,double&); // Mvir, Rvir, cvir, R200, c200
+        void modelNFWhalo(double M200,double z,double& Mvir,double& Rvir,double& cvir,double& R200,double& c200); // Radii in physical units
+        void modelNFWhalo_com(double M200,double z,double& Mvir,double& Rvir,double& cvir,double& R200,double& c200); // Mvir, Rvir, cvir, R200, c200
         //void modelNFWhalo_com(double,double,double&,double&,double&); //Mvir, Rvir, cvir
 
         double conc(double Mvir,double z); //Concentration parameter wrapper
@@ -523,7 +535,8 @@ class cosmology
     double get_logrp(double x1,double y1,double z1,double x2,double y2,double z2, double Chisq);
     //
     double getmstar();                  // M* defined such that sigma(M*)=1.686
-    void pevolve_fixed(double cdel,int opt,double z,double zstart,double&,double&);
+    void pevolve_fixed(double cdel,int opt,double z,double zstart,double&cdelz ,double&fdelz);
+    double getcDel(double cvir, double z, double Delta);
 
 };
 
