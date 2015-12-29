@@ -1082,3 +1082,69 @@ double cosmology::getcDel(double cvir, double z, double Delta)
 
 }
 
+/// The root of this function gives the cDel for a particular cvir
+double findcDelp(double cDeltap, void *params)
+{
+    cDelta_params c1 = *(cDelta_params *) params;
+    double *cDelta;
+    double *frac;
+    cDelta=c1.cDelta;
+    frac=c1.frac;
+
+    double fcDelta =log(1.+(*cDelta))  - (*cDelta)/(1.+(*cDelta));
+    double fcDeltap=log(1.+cDeltap) - cDeltap/(1.+cDeltap);
+
+    double res= (*frac)*pow((*cDelta)/cDeltap,3.0) - fcDelta/fcDeltap;
+    return res;
+
+}
+
+
+/// Get the c200 for a given cvir
+double cosmology::getcDeltap_from_cDelta(double cDelta, double Delta, double Deltap)
+{
+    int status;
+    int iter = 0, max_iter = 100;
+    double res;
+
+    const gsl_root_fsolver_type *T;
+    gsl_root_fsolver *s;
+
+    double c_lo = 0.01*cDelta, c_hi = 10.0*cDelta;
+
+    gsl_function F;
+    cDelta_params p;
+    double frac=Delta/Deltap;
+    p.cDelta = &cDelta;
+    p.frac = &frac;
+
+    F.function = &findcDelp;
+    F.params = &p;
+   
+    T = gsl_root_fsolver_brent;
+    s = gsl_root_fsolver_alloc (T);
+    gsl_root_fsolver_set (s, &F, c_lo, c_hi);
+
+    do
+    {
+        iter++;
+        status = gsl_root_fsolver_iterate (s);
+        res = gsl_root_fsolver_root (s);
+        c_lo = gsl_root_fsolver_x_lower (s);
+        c_hi = gsl_root_fsolver_x_upper (s);
+        status = gsl_root_test_interval (c_lo, c_hi,0, 1e-6);
+
+        if (status == GSL_SUCCESS)
+        {
+            //std::cout<<"# "<<"zcollapse:Brent converged after "<< iter<<" iterations"<<std::endl;
+        }
+
+
+    }while (status == GSL_CONTINUE && iter < max_iter);
+
+    gsl_root_fsolver_free (s);
+
+    return res;
+
+}
+

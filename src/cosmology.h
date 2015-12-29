@@ -95,6 +95,7 @@ double dvar_G(double x, void * params);
 double dvar_TH(double x, void * params);
 double findcmarch(double, void*);
 double findcDel(double, void*);
+double findcDelp(double, void*);
 
 class cosmology
 {
@@ -436,6 +437,7 @@ class cosmology
     friend double dvar_TH(double x, void * params);
     friend double findcmarch(double, void*);
     friend double findcDel(double, void*);
+    friend double findcDelp(double, void*);
 
     public:
     
@@ -539,6 +541,7 @@ class cosmology
     double getcDel(double cvir, double z, double Delta);
     double getRvirfromMvir(double Mvir, double z);
     double getRDelfromMDel(double Mdel, double z, double Del);
+    double getcDeltap_from_cDelta(double cDelta, double Delta, double Deltap);
 
 };
 
@@ -580,6 +583,13 @@ struct c200_params
     double *cvir;
     double *omegaz;
     double *dcz;
+};
+
+///Passing cosmology object, cvir, Omega(z), Deltacrit(z)
+struct cDelta_params
+{
+    double *cDelta;
+    double *frac;
 };
 
 /// This is for powerspectrum.cpp

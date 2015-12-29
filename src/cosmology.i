@@ -1069,4 +1069,29 @@ has virial concentration equal to cvir.
     >>> a.getcDel(10.0,0.0,200.)
     12.6784160959
 "
+
+
+%feature("docstring") cosmology::getcDeltap_from_cDelta
+"Output the concentration, cDeltap, of a NFW halo defined as Deltap with respect
+to the background density and which has concentration with respect to another
+definition, Delta, equal to cDelta.
+
+:Parameters:
+
+-   cDelta : The virial concentration
+-   Delta : The overdensity with respect to the background
+-   Deltap : The new overdensity with respect to the background at which to
+    output concentration
+
+:Returns:
+
+-   cDeltap : The concentration of this halo when defined as Deltap times overdense with respect to the background
+
+:Examples:
+
+    >>> import cosmology as cc
+    >>> a = cc.cosmology(0.27,0.0,-1.0,0.0,0.0476,0.7,2.726,0.8,0.96,log10(8.0),1.0)
+    >>> a.getcDeltap_from_cDelta(30.0, 200.0, 360.0)
+"
+
 %include "cosmology.h"
