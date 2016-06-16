@@ -380,7 +380,7 @@ double cosmology::Daofz(double z)
 {
     double scale=fabs(pow((100.0/c),2.0)*Omegak);
     double Chi=Chiofz_num(z);
-    double da;
+    double da=0.0;
     if(Omegak==0.0)
     {
         da=Chi/(1.+z);

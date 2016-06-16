@@ -1264,7 +1264,7 @@ double cosmology::Delta2_L_num(double k, double z)
         init_powerspectra_L();
     }
     double logk=log10(k);
-    double result;
+    double result=0.0;
     if(logk>kmin&&logk<kmax)
     {
         result=gsl_spline_eval (PSL0_spline,logk, PSL0_acc);
@@ -1303,7 +1303,7 @@ double cosmology::Delta2_NL_num(double k, double z)
         init_powerspectra_NL(z);
     }
     double logk=log10(k);
-    double result;
+    double result=0.0;
     if(logk>kmin&&logk<kmax)
     {
         result=gsl_spline_eval (PSNL_spline,logk, PSNL_acc);
@@ -1366,7 +1366,7 @@ double cosmology::xi_L_num(double r, double z)
         init_xi_L();
     }
     double logr=log10(r);
-    double result;
+    double result=0.0;
     if(logr>=rmin&&logr<=rmax)
     {
         result=gsl_spline_eval (xiL0_spline,logr, xiL0_acc);
@@ -1441,7 +1441,7 @@ double cosmology::xi_NL_num(double r, double z)
         init_xi_NL(z);
     }
     double logr=log10(r);
-    double result;
+    double result=0.0;
     if(logr>=rmin&&logr<=rmax)
     {
         result=gsl_spline_eval (xiNL_spline,logr, xiNL_acc);
