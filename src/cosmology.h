@@ -133,16 +133,16 @@ class cosmology
     private:
     /// Some constants
 #ifndef SWIG
-    const static double kmpspMpctoGyr=977.813952;
-    const static double gee=4.2994e-9;
-    const static double c=299792.458;
-    const static double e=2.71828183;
+    constexpr static double kmpspMpctoGyr=977.813952;
+    constexpr static double gee=4.2994e-9;
+    constexpr static double c=299792.458;
+    constexpr static double e=2.71828183;
 
 #else
-    const double kmpspMpctoGyr=977.813952;
-    const double gee=4.2994e-9;
-    const double c=299792.458;
-    const double e=2.71828183;
+    constexpr double kmpspMpctoGyr=977.813952;
+    constexpr double gee=4.2994e-9;
+    constexpr double c=299792.458;
+    constexpr double e=2.71828183;
 
 #endif
 
@@ -193,8 +193,8 @@ class cosmology
     double PSL0_dlow, PSL0_dhigh;
     double PSL0_xlow,PSL0_ylow,PSL0_xhigh,PSL0_yhigh;
 #ifndef SWIG
-    const static double kmin=-5.0;
-    const static double kmax=8.0;
+    constexpr static double kmin=-5.0;
+    constexpr static double kmax=8.0;
 #else
     const double kmin=-5.0;
     const double kmax=8.0;
@@ -214,8 +214,8 @@ class cosmology
     double xiL0_dlow, xiL0_dhigh;
     double xiL0_xlow,xiL0_ylow,xiL0_xhigh,xiL0_yhigh;
 #ifndef SWIG
-    const static double rmin=-5.0;
-    const static double rmax=5.0;
+    constexpr static double rmin=-5.0;
+    constexpr static double rmax=5.0;
 #else
     const double rmin=-5.0;
     const double rmax=5.0;
@@ -231,11 +231,11 @@ class cosmology
 
     /// Numerical interpolation for ukofm
 #ifndef SWIG
-    const static double cmin=-1.0;
-    const static double cmax=3.5;
-    const static double krsmax= 8.0;
-    const static double krsmin=-6.0;
-    const static int Nuk=100;
+    constexpr static double cmin=-1.0;
+    constexpr static double cmax=3.5;
+    constexpr static double krsmax= 8.0;
+    constexpr static double krsmin=-6.0;
+    constexpr static int Nuk=100;
 #else
     const double cmin=-1.0;
     const double cmax=3.5;
@@ -375,9 +375,9 @@ class cosmology
 
 
 #ifndef SWIG
-    const static double hod_kmin=-4.0;
-    const static double hod_kmax=7.5;
-    const static int kbins=161;
+    constexpr static double hod_kmin=-4.0;
+    constexpr static double hod_kmax=7.5;
+    constexpr static int kbins=161;
 #else
     const double hod_kmin=-4.0;
     const double hod_kmax=7.5;

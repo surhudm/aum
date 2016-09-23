@@ -89,9 +89,9 @@ class hod : public cosmology
     double xigg_dlow, xigg_dhigh;
     double xigg_xlow,xigg_ylow,xigg_xhigh,xigg_yhigh;
 #ifndef SWIG
-    const static double hod_rmin=-4.6;
-    const static double hod_rmax= 4.0;
-    const static double hod_rmax_u= 2.1;
+    constexpr static double hod_rmin=-4.6;
+    constexpr static double hod_rmax= 4.0;
+    constexpr static double hod_rmax_u= 2.1;
 #else
     const double hod_rmin=-4.6;
     const double hod_rmax= 4.0;
