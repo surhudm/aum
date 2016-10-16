@@ -118,33 +118,11 @@ class cosmology
 #endif
     double x0_2p[N0_2p],w0_2p[N0_2p];
 
-#ifndef SWIG
-    const static bool verbose=false;
-    const static bool mock=false;
-    const static bool takahashicorr=false;
-    const static bool peacockcorr=false;
-#else
-    const bool verbose=false;
-    const bool mock=false;
-    const bool takahashicorr=false;
-    const bool peacockcorr=false;
-#endif
+    bool verbose, mock, takahashicorr, peacockcorr;
 
     private:
     /// Some constants
-#ifndef SWIG
-    constexpr static double kmpspMpctoGyr=977.813952;
-    constexpr static double gee=4.2994e-9;
-    constexpr static double c=299792.458;
-    constexpr static double e=2.71828183;
-
-#else
-    constexpr double kmpspMpctoGyr=977.813952;
-    constexpr double gee=4.2994e-9;
-    constexpr double c=299792.458;
-    constexpr double e=2.71828183;
-
-#endif
+    double kmpspMpctoGyr, gee, c, e;
 
 #ifndef SWIG
     const static int Nsigma=100;
@@ -192,13 +170,7 @@ class cosmology
     gsl_spline *PSL0_spline;
     double PSL0_dlow, PSL0_dhigh;
     double PSL0_xlow,PSL0_ylow,PSL0_xhigh,PSL0_yhigh;
-#ifndef SWIG
-    constexpr static double kmin=-5.0;
-    constexpr static double kmax=8.0;
-#else
-    const double kmin=-5.0;
-    const double kmax=8.0;
-#endif
+    double kmin, kmax;
 
     /// Numerical interpolation units for non-linear power spectra
     bool bool_init_PSNL;
@@ -207,21 +179,15 @@ class cosmology
     double PSNL_dlow, PSNL_dhigh;
     double PSNL_xlow,PSNL_ylow,PSNL_xhigh,PSNL_yhigh;
 
-    /// Numerical interpolation units for linear power spectra
+    /// Numerical interpolation units for linear correlation
     bool bool_init_xiL0;
     gsl_interp_accel *xiL0_acc;
     gsl_spline *xiL0_spline;
     double xiL0_dlow, xiL0_dhigh;
     double xiL0_xlow,xiL0_ylow,xiL0_xhigh,xiL0_yhigh;
-#ifndef SWIG
-    constexpr static double rmin=-5.0;
-    constexpr static double rmax=5.0;
-#else
-    const double rmin=-5.0;
-    const double rmax=5.0;
-#endif
+    double rmin, rmax;
 
-    /// Numerical interpolation units for nonlinear power spectra
+    /// Numerical interpolation units for nonlinear correlation
     bool bool_init_xiNL;
     gsl_interp_accel *xiNL_acc;
     gsl_spline *xiNL_spline;
@@ -230,19 +196,13 @@ class cosmology
     double zeta_rmax,zetamax;
 
     /// Numerical interpolation for ukofm
+    double cmin, cmax, krsmin, krsmax;
 #ifndef SWIG
-    constexpr static double cmin=-1.0;
-    constexpr static double cmax=3.5;
-    constexpr static double krsmax= 8.0;
-    constexpr static double krsmin=-6.0;
-    constexpr static int Nuk=100;
+    const static int Nuk=100;
 #else
-    const double cmin=-1.0;
-    const double cmax=3.5;
-    const double krsmax= 8.0;
-    const double krsmin=-6.0;
     const int Nuk=100;
 #endif
+
     double uk_krs[Nuk];
     double uk_c[Nuk];
     double ukrsc[Nuk][Nuk];
@@ -374,13 +334,10 @@ class cosmology
     double xiL_barbar(double,double);
 
 
+    double hod_kmin, hod_kmax;
 #ifndef SWIG
-    constexpr static double hod_kmin=-4.0;
-    constexpr static double hod_kmax=7.5;
-    constexpr static int kbins=161;
+    const static int kbins=161;
 #else
-    const double hod_kmin=-4.0;
-    const double hod_kmax=7.5;
     const int kbins=161;
 #endif
     void initQk(double, double[]);

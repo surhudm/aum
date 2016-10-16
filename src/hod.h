@@ -66,6 +66,9 @@ double dxiggbar(double x, void* params);
 class hod : public cosmology
 {
     private:
+
+    int initialize_const();
+    
     /// Numerical interpolation units for D2_gg
     bool bool_init_D2gg;
     gsl_interp_accel *D2gg_acc;
@@ -88,15 +91,7 @@ class hod : public cosmology
     gsl_spline *xigg_spline;
     double xigg_dlow, xigg_dhigh;
     double xigg_xlow,xigg_ylow,xigg_xhigh,xigg_yhigh;
-#ifndef SWIG
-    constexpr static double hod_rmin=-4.6;
-    constexpr static double hod_rmax= 4.0;
-    constexpr static double hod_rmax_u= 2.1;
-#else
-    const double hod_rmin=-4.6;
-    const double hod_rmax= 4.0;
-    const double hod_rmax_u= 2.1;
-#endif
+    double hod_rmin, hod_rmax, hod_rmax_u;
 
     /// Numerical interpolation units for xi_gd
     bool bool_init_xigd;

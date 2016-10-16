@@ -25,6 +25,33 @@ cosmology::cosmology()
  * */
 void cosmology::initialize()
 {
+    /// Initialize all constants required for the program
+    verbose=false;
+    mock=false;
+    takahashicorr=false;
+    peacockcorr=false;
+
+    kmpspMpctoGyr=977.813952;
+    gee=4.2994e-9;
+    c=299792.458;
+    e=2.71828183;
+
+    /// Numerical interpolation units for power spectra and correlations
+    kmin=-5.0;
+    kmax=8.0;
+    rmin=-5.0;
+    rmax=5.0;
+
+    /// Numerical interpolation for ukofm
+    cmin=-1.0;
+    cmax=3.5;
+    krsmax= 8.0;
+    krsmin=-6.0;
+
+    /// For initQk
+    hod_kmin=-4.0;
+    hod_kmax=7.5;
+
     /// Initialize options
     opt_mf=1;
     opt_b=1;

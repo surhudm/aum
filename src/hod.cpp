@@ -2,10 +2,18 @@
 ///Halo occupation distribution function
 ///Derived from the class cosmology.
 
+int hod::initialize_const(){
+    // Initialize some constants
+    hod_rmin=-4.6;
+    hod_rmax= 4.0;
+    hod_rmax_u= 2.1;
+}
+
 ///Constructor
 hod::hod(cosmo p, hodpars h)
 :cosmology(p)
 {
+    initialize_const();
     hodp=h; 
     if(verbose){
         std::cout<<"# HOD inited to: "<<"\n"
@@ -38,6 +46,7 @@ hod::hod(cosmo p, hodpars h)
 hod::hod()
 :cosmology()
 {
+    initialize_const();
     hodp.Mmin=13.0;
     hodp.siglogM=0.25;
     hodp.Msat=14.0;
