@@ -24,6 +24,25 @@ double cosmology::nofm(double M, double z)
     return result;
 }
 
+/// Tinker et al. 2009 SO mass function The mass function is in comoving coordinates.
+/// n(M) dM has the units of h^3 Mpc^{-3}
+double cosmology::MF_TI09_500c(double M, double z)
+{
+    double Delta = 500./Omega0;
+    double sig=sqrt(varM_TH_num(M,z));
+    double dlogsigdlogm= 0.5*(log(varM_TH_num(0.99*M,z))-log(varM_TH_num(1.01*M,z)))/(log(0.99*M)-log(1.01*M));
+    double A0=0.206;
+    double sa0=1.54,b0=2.15,c0=1.31;
+    double Aofz=A0*pow(1.+z,-0.14);
+    double saofz=sa0*pow(1.+z,-0.06);
+    double alpDelta=pow(10.,-pow(0.75/log10(Delta/75.0),1.2));
+    double bofz=b0*pow(1.+z,-alpDelta);
+    double cofz=c0;
+    double fsig=Aofz*(pow(sig/bofz,-saofz)+1.)*exp(-cofz/pow(sig,2.));
+
+    return rho_crit_0*Omega0*fsig/pow(M,2.)*fabs(dlogsigdlogm);
+}
+
 /// Tinker et al. 2009 SO (350) mass function The mass function is in comoving coordinates.
 /// n(M) dM has the units of h^3 Mpc^{-3}
 double cosmology::MF_TI09_350(double M, double z)
@@ -176,6 +195,36 @@ double cosmology::bias(double M, double z)
     }
     return result;
 
+}
+
+/// Tinker et al. 2010 bias for SO(Delta)
+/// This should be used alongwith MF_TI10
+double cosmology::bias_TI10_wDelta(double M, double z, double Delta)
+{
+    double sig=sqrt(varM_TH_num(M,0.0));
+    double dc=1.686;
+    double dcz=dc;
+    if(z>0.0)
+    {
+        dcz=dc/growthfactor_num(z);
+    }
+    double xnu=dcz/sig;
+
+    double y=log10(Delta);
+
+    double expfac=exp(-pow(4./y,4.0));
+    double A=1.0+0.24*y*expfac;
+    double a=0.44*y-0.88;
+    double B=0.183;
+    double b=1.5;
+    double C=0.019+0.107*y+0.19*expfac;
+    double c=2.4;
+
+    double xnua=pow(xnu,a);
+    double xnub=pow(xnu,b);
+    double xnuc=pow(xnu,c);
+
+    return 1.0 - A*xnua/(xnua+pow(dc,a)) + B*xnub + C*xnuc;
 }
 
 /// Tinker et al. 2010 bias for SO(200)

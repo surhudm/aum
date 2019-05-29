@@ -500,6 +500,10 @@ class cosmology
     double getRDelfromMDel(double Mdel, double z, double Del);
     double getcDeltap_from_cDelta(double cDelta, double Delta, double Deltap);
 
+    double bias_TI10_wDelta(double M, double z, double Delta);
+
+    double MF_TI09_500c(double M, double z);
+
 };
 
 /// This is from haloes.cpp
