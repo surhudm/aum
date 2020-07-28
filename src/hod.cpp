@@ -41,6 +41,10 @@ hod::hod(cosmo p, hodpars h)
     fcen_off=0.0;
     inc_alp=0.0;
     inc_xM=12.0;
+#if TINK==2
+    bool_init_nc=false;
+    bool_init_ns=false;
+#endif
 }
 
 hod::hod()
@@ -79,6 +83,10 @@ hod::hod()
     fcen_off=0.0;
     inc_alp=0.0;
     inc_xM=12.0;
+#if TINK==2
+    bool_init_nc=false;
+    bool_init_ns=false;
+#endif
 }
 
 void hod::sethalo_exc(bool mark){
