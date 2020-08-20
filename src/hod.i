@@ -2,6 +2,7 @@
 %include cpointer.i
 %pointer_class(double,dp)
 %apply double& INOUT { double& a };
+%apply double& INPUT { double& xx, double &yy };
 %feature("autodoc", 1);
 %include "carrays.i"
 %include "cosmology.i"

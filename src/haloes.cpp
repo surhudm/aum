@@ -26,9 +26,9 @@ double cosmology::nofm(double M, double z)
 
 /// Tinker et al. 2009 SO mass function The mass function is in comoving coordinates.
 /// n(M) dM has the units of h^3 Mpc^{-3}
-double cosmology::MF_TI09_500c(double M, double z)
+double cosmology::MF_TI09(double M, double z, double Deltac)
 {
-    double Delta = 500./Omega0;
+    double Delta = Deltac/Omega0;
     double sig=sqrt(varM_TH_num(M,z));
     double dlogsigdlogm= 0.5*(log(varM_TH_num(0.99*M,z))-log(varM_TH_num(1.01*M,z)))/(log(0.99*M)-log(1.01*M));
     double A0=0.206;
@@ -152,6 +152,54 @@ double cosmology::MF_ST(double M, double z)
     return 2.0*rho_crit_0*Omega0/pow(M,2.)*fabs(dlogsigdlogm)*dodl;
 }
 
+/// Jenkins et al. FOF (200c) mass function The mass function is in comoving coordinates.
+/// n(M) dM has the units of h^3 Mpc^{-3}
+double cosmology::MF_Jenkins(double M, double z)
+{
+    double sig=sqrt(varM_TH_num(M,z));
+    double dlogsigdlogm= 0.5*(log(varM_TH_num(0.99*M,z))-log(varM_TH_num(1.01*M,z)))/(log(0.99*M)-log(1.01*M));
+
+    double A= 0.220 + 0.004*(Omega(z)-0.30)/0.06;
+    double b= 0.730 - 0.007*(Omega(z)-0.30)/0.06;
+    double epsilon= 3.86;
+    double fsig=A*exp(-pow(fabs(log(1/sig)+b), epsilon));
+
+    return rho_crit_0*Omega0*fsig/pow(M,2.)*fabs(dlogsigdlogm);
+
+}
+
+/*
+/// Jenkins et al. FOF (200c) mass function The mass function is in comoving coordinates.
+/// n(M) dM has the units of h^3 Mpc^{-3}
+double cosmology::MF_Jenkins(double M, double z)
+{
+    double sig=sqrt(varM_TH_num(M,z));
+    double dlogsigdlogm= 0.5*(log(varM_TH_num(0.99*M,z))-log(varM_TH_num(1.01*M,z)))/(log(0.99*M)-log(1.01*M));
+
+    double A= 0.220 + 0.004*(Omega0*pow(1.+z,3.)-0.30)/0.06;
+    double b= 0.730 - 0.007*(Omega0*pow(1.+z,3.)-0.30)/0.06;
+    double epsilon= 3.86;
+    double fsig=A*exp(-pow(fabs(log(1/sig)+b), epsilon));
+
+    return rho_crit_0*Omega0*fsig/pow(M,2.)*fabs(dlogsigdlogm);
+
+}
+*/
+
+/// Evrard et al. 2002 mass function for SO(200c) halos The mass function is in comoving coordinates.
+/// n(M) dM has the units of h^3 Mpc^{-3}
+double cosmology::MF_Evrard(double M, double z)
+{
+    double sig=sqrt(varM_TH_num(M,z));
+    double dlogsigdlogm= 0.5*(log(varM_TH_num(0.99*M,z))-log(varM_TH_num(1.01*M,z)))/(log(0.99*M)-log(1.01*M));
+    double Ev_x = (1.-Omega(z))/0.7;
+    double A=0.27*(1-Ev_x) + 0.22*(Ev_x);
+    double B=0.65*(1-Ev_x) + 0.73*(Ev_x);
+    double eps=3.77*(1-Ev_x) + 3.86*(Ev_x);
+    double fsig=A*exp(-pow(fabs(-log(sig)+B), eps));
+
+    return rho_crit_0*Omega0*fsig/pow(M,2.)*fabs(dlogsigdlogm);
+}
 /// Bhattacharya et al. mass function The mass function is in comoving coordinates.
 /// n(M) dM has the units of h^3 Mpc^{-3}
 double cosmology::MF_BH(double M, double z)

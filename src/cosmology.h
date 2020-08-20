@@ -433,6 +433,7 @@ class cosmology
 
 	// Mass and bias function wrappers
         double nofm(double M,double z);
+        double MF_TI09(double M, double z, double Deltac);
         double bias(double M,double z);
 	
 	// Variance related functions
@@ -501,8 +502,9 @@ class cosmology
     double getcDeltap_from_cDelta(double cDelta, double Delta, double Deltap);
 
     double bias_TI10_wDelta(double M, double z, double Delta);
+    double MF_Evrard(double,double);       // Evrard et al. 2002 mass function
+    double MF_Jenkins(double,double);       // Jenkins et al. mass function
 
-    double MF_TI09_500c(double M, double z);
 
 };
 
