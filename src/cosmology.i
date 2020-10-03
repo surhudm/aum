@@ -62,7 +62,7 @@
 
 :Returns:
 
--   Comoving distance
+-   Comoving distance (hinv Mpc)
 
 :Examples:
 
@@ -149,7 +149,7 @@
 
 :Returns:
 
--   Luminosity distance
+-   Luminosity distance (hinv Mpc)
 
 :Examples:
 
@@ -169,7 +169,7 @@
 
 :Returns:
 
--   Angular diameter distance
+-   Angular diameter distance (hinv Mpc)
 
 :Examples:
 
@@ -189,7 +189,7 @@
 
 :Returns:
 
--   Angular diameter distance between two redshifts
+-   Angular diameter distance between two redshifts (hinv Mpc)
 
 :Examples:
 
