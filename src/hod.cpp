@@ -7,6 +7,8 @@ int hod::initialize_const(){
     hod_rmin=-4.6;
     hod_rmax= 4.0;
     hod_rmax_u= 2.1;
+
+    return 1;
 }
 
 ///Constructor
