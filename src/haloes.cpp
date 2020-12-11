@@ -303,7 +303,16 @@ double cosmology::bias_TI10(double M, double z)
     double xnub=pow(xnu,b);
     double xnuc=pow(xnu,c);
 
-    return 1.0 - A*xnua/(xnua+pow(dc,a)) + B*xnub + C*xnuc;
+    double res = 1.0 - A*xnua/(xnua+pow(dc,a)) + B*xnub + C*xnuc;
+
+    if (darkemu){
+        double logxnu = log10(xnu);
+        if (logxnu>0.0){
+            res = 1.0 + res*( -0.691173*pow(logxnu, 3) + 0.0919738*pow(logxnu, 2) + 0.252711*logxnu - 0.0661608 );
+        }
+    }
+
+    return res;
 }
 
 /// Tinker et al. 2006 bias 
@@ -1245,3 +1254,11 @@ double cosmology::getcDeltap_from_cDelta(double cDelta, double Delta, double Del
 
 }
 
+void cosmology::setdarkemu(bool yesno){
+    darkemu = yesno;
+
+    if (darkemu && opt_b!=1){
+        fprintf(stderr, "DarkQuest emulator correction only works with bias_TI10 opt_b=1\n");
+        exit(11);
+    }
+}

@@ -231,6 +231,8 @@ class cosmology
     double fgm_m0;
     double fgm_slp;
 
+    /// Dark emu correction to Tinker bias
+    bool darkemu;
 
     /// Private functions
     void initialize();          //Initializations
@@ -506,6 +508,10 @@ class cosmology
     double MF_Evrard(double,double);       // Evrard et al. 2002 mass function
     double MF_Jenkins(double,double);       // Jenkins et al. mass function
 
+    // printQk
+    void printQk(double);
+
+    void setdarkemu(bool);
 
 };
 

@@ -59,6 +59,9 @@ void cosmology::initialize()
     opt_ps_L=1;
     opt_ps_NL=1;
 
+    // Dark emulator correction to Tinker 2010 bias
+    darkemu = false;
+
     /// Initialize the time today
     t0=Time(0.0);
 

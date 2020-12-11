@@ -268,6 +268,7 @@ class hod : public cosmology
     // This option sets up output split by different one halo-two halo contributions, use with caution
     int whichopt;
 
+
 };
 
 #endif

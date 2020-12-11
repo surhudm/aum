@@ -2687,3 +2687,28 @@ double cosmology::wpl_kaiser(double z, double rad, double projmax,double fkai){
         return result;
 }
 
+void cosmology::printQk(double z){
+    double rvir[N9_16],mvir[N9_16],cvir[N9_16];
+    double r200[N9_16],m200[N9_16],c200[N9_16];
+    double karr[kbins];
+    double hod_kdiff=(hod_kmax-hod_kmin)/(kbins-1.);
+    for(int i=0;i<N9_16;i++)
+    {
+        double mass=pow(10.,x9_16[i]);
+        m200[i]=x9_16[i];
+        modelNFWhalo_com(mass, z, mvir[i], rvir[i], cvir[i], r200[i],c200[i]);
+    }
+    if(!bool_initQk){
+        initQk(z,r200);
+    }
+
+    /// Output m1, m2, k, Qk
+    for (int jk=0; jk<kbins; jk++)
+        for (int i=0; i<N9_16; i++)
+            for (int j=0; j<N9_16; j++)
+            {
+                karr[jk]=hod_kmin+jk*hod_kdiff;
+                printf("Qk: %.7le %.7le %.7le %.7le \n", karr[jk], m200[i], m200[j], Qk1[(jk*N9_16+i)*N9_16+j]+Qk2[(jk*N9_16+i)*N9_16+j]);
+            }
+
+}
