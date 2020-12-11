@@ -309,6 +309,8 @@ double cosmology::bias_TI10(double M, double z)
         double logxnu = log10(xnu);
         if (logxnu>0.0){
             res = 1.0 + res*( -0.691173*pow(logxnu, 3) + 0.0919738*pow(logxnu, 2) + 0.252711*logxnu - 0.0661608 );
+        }else{
+            res = 1.0 + res*(- 0.0661608 );
         }
     }
 
