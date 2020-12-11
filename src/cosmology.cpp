@@ -842,3 +842,7 @@ double cosmology::get_logrp(double x1, double x2, double x3, double y1, double y
     if(cosang>1.0) return -100.0;
     return 0.5*log10(Chisq*(1.-cosang*cosang));
 }
+
+void cosmology::set_takahashi(bool opt){
+    takahashicorr=opt;
+}

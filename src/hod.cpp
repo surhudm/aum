@@ -38,6 +38,7 @@ hod::hod(cosmo p, hodpars h)
     bool_init_xigd=false;
     bool_init_xigg_bar=false;
     bool_init_xigg_barbar=false;
+    miyatake21switch=false;
     fKaiser=-99.0;
     off_rbyrs=0.0;
     fcen_off=0.0;
@@ -80,6 +81,7 @@ hod::hod()
     bool_init_xigd=false;
     bool_init_xigg_bar=false;
     bool_init_xigg_barbar=false;
+    miyatake21switch=false;
     fKaiser=-99.0;
     off_rbyrs=0.0;
     fcen_off=0.0;
@@ -93,6 +95,10 @@ hod::hod()
 
 void hod::sethalo_exc(bool mark){
     halo_exc=mark;
+}
+
+void hod::setMiyatake21_switch(bool mark){
+    miyatake21switch=mark;
 }
 
 #if TINK==1
@@ -543,6 +549,7 @@ double hod::Pk_gg_gd_he(double z)
 
             //printf("%f %f %f:\n",karr[k],r200[i],c200[i]);
             uk_d[i]=ukinterp(karr[kk]*r200[i]/c200[i], c200[i]);
+            //fprintf(stderr, "uk_d: %le %le %le \n", karr[kk]*r200[i]/c200[i], c200[i], uk_d[i]);
             //printf("DEBUG: %e %e %e \n",karr[k]*r200[i]/c200[i], c200[i],uk_d[i]);
 
             if(hodp.csbycdm==1.0){
@@ -561,8 +568,16 @@ double hod::Pk_gg_gd_he(double z)
             //exit(101);
 
             // Now the integrals for the 1 halo term
-            int_1hcs+=mdep_1hcs[i]*uk_s[i]*uk_cen[i];
-            int_1hss+=mdep_1hss[i]*pow(uk_s[i],2.);
+            if (miyatake21switch){
+                double avNcen = ncen(x9_16[i]);
+                if (avNcen>0){
+		    int_1hcs+=mdep_1hcs[i]*uk_s[i]*uk_cen[i]/ncen(x9_16[i]); /// --> Change here Divide by ncen(M)
+		    int_1hss+=mdep_1hss[i]*pow(uk_s[i],2.)/ncen(x9_16[i]);  /// --> Change here Divide by ncen(M)
+                }
+            }else{
+		int_1hcs+=mdep_1hcs[i]*uk_s[i]*uk_cen[i];
+		int_1hss+=mdep_1hss[i]*pow(uk_s[i],2.);  
+            }
             if(fgm_m0<0.0){
                 int_1hcd+=mdep_1hcd[i]*uk_d[i]*uk_cen[i];
                 int_1hsd+=mdep_1hsd[i]*uk_s[i]*uk_d[i];
@@ -640,6 +655,7 @@ double hod::Pk_gg_gd_he(double z)
         //std::cout<<whichopt<<" whichopt is";
         if(whichopt==0){
             Pk_gg[kk]=2.0*fcen*fsat*P_gg_1hcs+fsat*fsat*P_gg_1hss+fcen*fcen*P_gg_2hcc+2.0*fcen*fsat*P_gg_2hcs+fsat*fsat*P_gg_2hss;
+            //fprintf(stderr, "%le %le %le %le %le %le %le %le\n", karr[kk], fcen, fsat, P_gg_1hcs, P_gg_1hss, P_gg_2hcc, P_gg_2hcs, P_gg_2hss);
         }else{
             Pk_gg[kk]=0.0;
             if(whichopt==1){
@@ -688,7 +704,7 @@ double hod::Pk_gg_gd_he(double z)
 	    if(verbose)
 		printf("%e %e %e\n",xx[kk],Pk_gg[kk],Pk_gd[kk]);
 	    kk++;
-            //printf("%d %le\n",k,Pk_gd[k]);
+            //printf("%d %le %le\n",k,Pk_gg[k],Pk_gd[k]);
             //printf("%e %e %e\n",xx[k],yy[k],zz[k]);
         }
 

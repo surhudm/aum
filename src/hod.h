@@ -177,6 +177,8 @@ class hod : public cosmology
 
     hodpars hodp;
 
+    bool miyatake21switch;
+
     public:
     hod(cosmo, hodpars);
     hod();
@@ -237,6 +239,7 @@ class hod : public cosmology
 
     // Set halo exclusion option
     void sethalo_exc(bool);
+    void setMiyatake21_switch(bool);
 
     // Set central offset parameters, default zero off-centering
     void set_cen_offset_params(double fcen_off,double off_rbyrs);
