@@ -2423,7 +2423,7 @@ void hod::hod_renew(cosmo p, hodpars h){
     hodp=h;
 
     if(verbose){
-        std::cout<<"# New HOD parameters set, setting up the new cosmology now\n";
+        std::cout<<"# New HOD parameters set\n";
     }
     // Next call the cosmology renew method
     renew(p);
