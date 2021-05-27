@@ -425,6 +425,7 @@ class cosmology
         double Delta_crit(double z);  //Delta_crit(z), Bryan and Norman '98
 
 	void set_optmf(int opt); // Set the mass function option
+	void set_takahashi(bool opt); // Set the Takahashi correction option
 
         // Power spectrum calculations
         double Delta2_L_num(double k,double z);     // Numerical \Delta^2(k) Power spectrum, k should be in units of h Mpc^{-1} wrapper
