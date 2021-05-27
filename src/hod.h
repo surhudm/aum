@@ -256,6 +256,7 @@ class hod : public cosmology
 
     // Renew HOD and cosmology parameters
     void hod_renew(cosmo p, hodpars h);
+    void hod_renew(hodpars h);
 
 #if TINK==2
     void init_Nc_spl(double xx[],double yy[],int Ncspl);

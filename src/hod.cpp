@@ -2386,6 +2386,19 @@ double hod::pspec_halomodel(double z){
     return 0;
 }
 
+void hod::hod_renew(hodpars h){
+    // First free up all the memory associated with all splines
+    hod_free();
+
+    // Set up new hod parameters
+    hodp=h;
+
+    if(verbose){
+        std::cout<<"# New HOD parameters set, setting up the new cosmology now\n";
+    }
+
+}
+
 void hod::hod_renew(cosmo p, hodpars h){
     // First free up all the memory associated with all splines
     hod_free();
