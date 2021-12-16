@@ -47,7 +47,11 @@ struct xi_gg_params
 struct hodpars
 {
     // HOD parameters
-    double Mmin,siglogM,Msat,alpsat,Mcut;
+    double logM1, logL0, sigmac, gamma1, gamma2;
+
+    double b0, b1, b2, alphas;
+
+    double logL1, logL2;
 
     //
     double fac,csbycdm;
@@ -222,6 +226,8 @@ class hod : public cosmology
 
     /// The halo model power spectrum
     double pspec_halomodel(double z);
+    double get_avlogL(double xM);
+    double gammaincfunc(double x);
     
     double scale_dep_bias_crossr(double,int,double[],double[],double[],bool);
 

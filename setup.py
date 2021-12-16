@@ -20,18 +20,12 @@ hod_module = Extension('_hod',
                            libraries=['m','gsl','gslcblas'],
                            )
 
-class build_ext_first(setuptools.command.install.install):
-    def run(self):
-        self.run_command("build_ext")
-        return setuptools.command.install.install.run(self)
-
 setup (name        = 'aum',
        version     = '1.0rc',
        author      = "Surhud More",
        url         = "http://member.ipmu.jp/surhud.more/research",
        author_email= "surhud.more@ipmu.jp",
        description = """A Unified Modelling scheme for galaxy abundance, galaxy clustering and galaxy-galaxy lensing""",
-       cmdclass = {'install' : build_ext_first},
        ext_modules = [cosmology_module, hod_module],
        license     = ['GPL'],
        py_modules  = ["cosmology", "hod"],
