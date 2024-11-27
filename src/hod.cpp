@@ -153,7 +153,7 @@ double hod::nsat(double xm)
 }
 
 void hod::init_Nc_spl(double xx[],double yy[],int Ncspl){
-    if(!bool_init_nc){
+    if(bool_init_nc){
         gsl_interp_accel_free(nc_acc);
         gsl_spline_free(nc_spline);
         bool_init_nc=false;
@@ -167,7 +167,7 @@ void hod::init_Nc_spl(double xx[],double yy[],int Ncspl){
 }
 
 void hod::init_Ns_spl(double xx[],double yy[],int Nsspl){
-    if(!bool_init_ns){
+    if(bool_init_ns){
         gsl_interp_accel_free(ns_acc);
         gsl_spline_free(ns_spline);
         bool_init_ns=false;
@@ -1962,6 +1962,19 @@ double hod::Sigma(double z, int rpbins_sd, double sd_Rp[], double sigma[], bool 
 /// Free unrequired memory
 void hod::hod_free()
 {
+#if TINK==2
+    if(bool_init_ns){
+        gsl_interp_accel_free(ns_acc);
+        gsl_spline_free(ns_spline);
+        bool_init_ns=false;
+    }
+    if(bool_init_nc){
+        gsl_interp_accel_free(nc_acc);
+        gsl_spline_free(nc_spline);
+        bool_init_nc=false;
+    }
+#endif
+
     if(bool_init_D2gg){
         gsl_interp_accel_free(D2gg_acc);
         gsl_spline_free(D2gg_spline);
