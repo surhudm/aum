@@ -182,6 +182,7 @@ class hod : public cosmology
     public:
     hod(cosmo, hodpars);
     hod();
+    ~hod();
 
     // Halo occupation as a function of mass 
     double ncen(double logM);           // <Ncen>(M)
